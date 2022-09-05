@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import JobsAvailable from '../../components/JobsAvailable';
 import CompanyBanner from '../../components/CompanyBanner';
 import CompanyDetailCard from '../../components/CompanyDetailCard';
+import CompanyDescription from '../../components/CompanyDescription';
 
 const CompanyJobsPage: FC = () => (
   <section>
@@ -10,6 +11,7 @@ const CompanyJobsPage: FC = () => (
         <div className="row">
           <div className="col-lg-7 col-xl-8 col-xxl-9">
             <CompanyBanner />
+            <CompanyDescription />
           </div>
           <div className="col-lg-5 col-xl-4 col-xxl-3">
             <CompanyDetailCard />
