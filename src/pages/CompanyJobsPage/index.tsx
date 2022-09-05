@@ -11,7 +11,9 @@ const CompanyJobsPage: FC = () => (
         <div className="row">
           <div className="col-lg-7 col-xl-8 col-xxl-9">
             <CompanyBanner />
-            <CompanyDescription />
+            <section className="mt-4 mt-lg-5">
+              <CompanyDescription />
+            </section>
           </div>
           <div className="col-lg-5 col-xl-4 col-xxl-3">
             <CompanyDetailCard />

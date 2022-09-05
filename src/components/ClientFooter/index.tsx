@@ -131,7 +131,7 @@ const ClientFooter: FC = () => (
         <div className="row justify-content-between align-items-center">
           <div className="col-lg-auto">
             <div className="pxp-footer-copyright pxp-text-light">
-              © 2021 Jobster. All Right Reserved.
+              © 2021 findustalent. All Right Reserved.
             </div>
           </div>
           <div className="col-lg-auto">
