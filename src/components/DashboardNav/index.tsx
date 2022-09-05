@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
+import { NavLink } from 'react-router-dom';
+import { DASHBOARD_ADD_JOB_ROUTE } from '../../config/routes';
 import logoImage from '../../theme/images/company-logo-1.png';
 
 const DashboardNav: FC = () => (
   <nav className="pxp-user-nav pxp-on-light">
-    <a href="company-dashboard-new-job.html" className="btn rounded-pill pxp-nav-btn">
+    <NavLink to={DASHBOARD_ADD_JOB_ROUTE} className="btn rounded-pill pxp-nav-btn">
       Post a Job
-    </a>
+    </NavLink>
     <div className="dropdown pxp-user-nav-dropdown pxp-user-notifications">
       <span role="button" className="dropdown-toggle" data-bs-toggle="dropdown">
         <span className="fa fa-bell-o" />

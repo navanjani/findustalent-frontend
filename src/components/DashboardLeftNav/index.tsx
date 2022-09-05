@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
+import { NavLink } from 'react-router-dom';
+import { DASHBOARD_ADD_JOB_ROUTE, DASHBOARD_HOME_ROUTE } from '../../config/routes';
 
 const DashboardLeftNav: FC = () => (
   <nav className="mt-3 mt-lg-4 d-flex justify-content-between flex-column pb-100">
     <div className="pxp-dashboard-side-label">Admin tools</div>
     <ul className="list-unstyled">
-      <li className="pxp-active">
-        <a href="company-dashboard.html">
+      <li>
+        <NavLink to={DASHBOARD_HOME_ROUTE} className={({ isActive }) => (isActive ? 'pxp-active' : '')}>
           <span className="fa fa-home" />
           Dashboard
-        </a>
+        </NavLink>
       </li>
       <li>
         <a href="company-dashboard-profile.html">
@@ -17,10 +19,10 @@ const DashboardLeftNav: FC = () => (
         </a>
       </li>
       <li>
-        <a href="company-dashboard-new-job.html">
+        <NavLink to={DASHBOARD_ADD_JOB_ROUTE} className={({ isActive }) => (isActive ? 'pxp-active' : '')}>
           <span className="fa fa-file-text-o" />
           New Job Offer
-        </a>
+        </NavLink>
       </li>
       <li>
         <a href="company-dashboard-jobs.html">
