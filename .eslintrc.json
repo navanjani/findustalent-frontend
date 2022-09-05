@@ -90,6 +90,25 @@
       {
         "props": false
       }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "printWidth": 110
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 110
+      }
+    ],
+    "react/jsx-one-expression-per-line": [
+      1,
+      {
+        "allow": "single-child"
+      }
     ]
   }
 }

@@ -3,10 +3,7 @@ import './style.scss';
 import banner from '../../theme/images/hero-illustration.png';
 
 const HomeHero: FC = () => (
-  <section
-    className="pxp-hero vh-100"
-    style={{ backgroundColor: 'var(--pxpMainColorLight)' }}
-  >
+  <section className="pxp-hero vh-100" style={{ backgroundColor: 'var(--pxpMainColorLight)' }}>
     <div className="pxp-hero-caption">
       <div className="pxp-container">
         <div className="row pxp-pl-80 align-items-center justify-content-between">
@@ -24,26 +21,15 @@ const HomeHero: FC = () => (
             </div>
 
             <div className="pxp-hero-form pxp-hero-form-round mt-3 mt-lg-4">
-              <form
-                className="row gx-3 align-items-center"
-                action="jobs-list-1.html"
-              >
+              <form className="row gx-3 align-items-center" action="jobs-list-1.html">
                 <div className="col-12 col-sm">
                   <div className="mb-3 mb-sm-0">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Job Title or Keyword"
-                    />
+                    <input type="text" className="form-control" placeholder="Job Title or Keyword" />
                   </div>
                 </div>
                 <div className="col-12 col-sm pxp-has-left-border">
                   <div className="mb-3 mb-sm-0">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Location"
-                    />
+                    <input type="text" className="form-control" placeholder="Location" />
                   </div>
                 </div>
                 <div className="col-12 col-sm-auto">
