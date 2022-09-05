@@ -1,12 +1,20 @@
 import React, { FC } from 'react';
-import JobCompanyDetails from '../../components/JobCompanyDetails';
 import JobsAvailable from '../../components/JobsAvailable';
+import CompanyBanner from '../../components/CompanyBanner';
+import CompanyDetailCard from '../../components/CompanyDetailCard';
 
 const CompanyJobsPage: FC = () => (
   <section>
     <div className="pxp-container">
       <div className="pxp-single-company-container pxp-has-columns">
-        <JobCompanyDetails />
+        <div className="row">
+          <div className="col-lg-7 col-xl-8 col-xxl-9">
+            <CompanyBanner />
+          </div>
+          <div className="col-lg-5 col-xl-4 col-xxl-3">
+            <CompanyDetailCard />
+          </div>
+        </div>
       </div>
       <JobsAvailable />
     </div>

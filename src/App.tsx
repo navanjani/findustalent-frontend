@@ -10,6 +10,7 @@ import './App.scss';
 import ClientNavbar from './components/ClientNavbar';
 import CompanyJobsPage from './pages/CompanyJobsPage';
 import SignUpPage from './pages/SignUpPage';
+import ClientFooter from './components/ClientFooter';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path={COMPANY_JOBS_ROUTE} element={<CompanyJobsPage />} />
         <Route path={SIGNUP_PAGE_ROUTE} element={<SignUpPage />} />
       </Routes>
+      <ClientFooter />
     </div>
   );
 }
