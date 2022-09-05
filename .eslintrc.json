@@ -53,10 +53,35 @@
           "consistent": true,
           "multiline": true
         },
-        "ImportDeclaration": "never",
+        "ImportDeclaration": {
+          "consistent": true,
+          "multiline": true
+        },
         "ExportDeclaration": {
           "multiline": true,
           "minProperties": 3
+        }
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
         }
       }
     ]
