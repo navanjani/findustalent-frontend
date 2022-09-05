@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
-import { Container } from 'react-bootstrap';
+import HomeHero from '../../components/HomeHero';
 
-const HomePage: FC = () => (
-  <Container>
-    <h1>Homepage</h1>
-  </Container>
-);
+const HomePage: FC = () => <HomeHero />;
 
 export default HomePage;

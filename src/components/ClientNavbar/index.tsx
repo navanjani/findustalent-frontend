@@ -1,40 +1,50 @@
 import React, { FC } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
 import { HOME_PAGE_ROUTE } from '../../config/routes';
+import ClientNavbarMobile from '../ClientNavbarMobile';
 
 const ClientNavbar: FC = () => (
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Container>
-      <Navbar.Brand as={NavLink} to={HOME_PAGE_ROUTE}>
-        Findustalent.com
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto">
-          <NavDropdown title="Product" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-        </Nav>
-        <Nav>
-          <Nav.Link href="#deets">Login</Nav.Link>
-          <Nav.Link href="#memes">Create an account</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+  <header className="pxp-header fixed-top">
+    <div className="pxp-container">
+      <div className="pxp-header-container">
+        <div className="pxp-logo">
+          <NavLink to={HOME_PAGE_ROUTE} className="pxp-animate">
+            <span>F</span>
+            industalent
+          </NavLink>
+        </div>
+        <ClientNavbarMobile />
+        <nav className="pxp-nav dropdown-hover-all d-none d-xl-block">
+          <ul>
+            <li className="dropdown">
+              <NavLink to={HOME_PAGE_ROUTE}>Home</NavLink>
+            </li>
+            <li className="dropdown">
+              <NavLink to={HOME_PAGE_ROUTE}>Product</NavLink>
+            </li>
+            <li className="dropdown">
+              <NavLink to={HOME_PAGE_ROUTE}>Pricing</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <nav className="pxp-user-nav d-none d-sm-flex">
+          <NavLink to={HOME_PAGE_ROUTE}>
+            <button type="button" className="btn rounded-pill pxp-nav-btn">
+              Post a Job
+            </button>
+          </NavLink>
+          <NavLink
+            className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"
+            data-bs-toggle="modal"
+            to={HOME_PAGE_ROUTE}
+            role="button"
+          >
+            Sign in
+          </NavLink>
+        </nav>
+      </div>
+    </div>
+  </header>
 );
 
 export default ClientNavbar;
