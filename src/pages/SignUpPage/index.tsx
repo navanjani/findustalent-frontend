@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import signupImage from '../../theme/images/signin-fig.png';
+import signupImage from '../../theme/images/signup-big-fig.png';
 
 const SignUpPage: FC = () => (
   <section
@@ -43,7 +43,7 @@ const SignUpPage: FC = () => (
                     <span className="fa fa-lock" />
                   </div>
                   <button
-                    className="btn rounded-pill pxp-sign-hero-form-cta"
+                    className="btn rounded-pill pxp-sign-hero-form-cta btn-full-width"
                     type="submit"
                   >
                     Continue
