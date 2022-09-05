@@ -5,10 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.css';
-import './theme/css/font-awesome.min.css';
-import './theme/css/animate.css';
-import './theme/css/style.css';
+import './theme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
