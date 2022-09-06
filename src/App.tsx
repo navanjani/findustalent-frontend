@@ -7,6 +7,8 @@ import {
   SIGNUP_PAGE_ROUTE,
   DASHBOARD_HOME_ROUTE,
   DASHBOARD_ADD_JOB_ROUTE,
+  RECRUITER_SIGNUP_PAGE_ROUTE,
+  CANDIDATE_SIGNUP_PAGE_ROUTE,
 } from './config/routes';
 import HomePage from './pages/HomePage';
 import './App.scss';
@@ -17,6 +19,8 @@ import ClientFooter from './components/ClientFooter';
 import DashboardPage from './pages/DashboardPage';
 import { selectBodyColor, selectShowClientNavBar } from './store/appState/selectors';
 import RecruiterAddJobPage from './pages/RecruiterAddJobPage';
+import RecruiterSignupPage from './pages/RecruiterSignupPage';
+import CandidateSignupPage from './pages/CandidateSignupPage';
 
 function App() {
   const showClientNavBar = useSelector(selectShowClientNavBar);
@@ -30,6 +34,8 @@ function App() {
         <Route path={SIGNUP_PAGE_ROUTE} element={<SignUpPage />} />
         <Route path={DASHBOARD_HOME_ROUTE} element={<DashboardPage />} />
         <Route path={DASHBOARD_ADD_JOB_ROUTE} element={<RecruiterAddJobPage />} />
+        <Route path={RECRUITER_SIGNUP_PAGE_ROUTE} element={<RecruiterSignupPage />} />
+        <Route path={CANDIDATE_SIGNUP_PAGE_ROUTE} element={<CandidateSignupPage />} />
       </Routes>
       {showClientNavBar && <ClientFooter />}
     </div>
