@@ -9,8 +9,8 @@ const ClientNavbar: FC = () => (
       <div className="pxp-header-container">
         <div className="pxp-logo">
           <NavLink to={HOME_PAGE_ROUTE} className="pxp-animate">
-            <span>F</span>
-            industalent
+            <span style={{ color: 'var(--pxpMainColor)' }}>findus</span>
+            talent
           </NavLink>
         </div>
         <ClientNavbarMobile />
