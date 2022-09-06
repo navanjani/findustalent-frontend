@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import signupImageCandidate from '../../theme/images/signup-big-fig.png';
-import signupImageRecruiter from '../../theme/images/customer-2.png';
+import signupImageCandidate from '../../theme/images/customer-2.png';
+import signupImageRecruiter from '../../theme/images/customer-4.png';
 import { CANDIDATE_SIGNUP_PAGE_ROUTE, RECRUITER_SIGNUP_PAGE_ROUTE } from '../../config/routes';
 
 const SignUpPage: FC = () => (

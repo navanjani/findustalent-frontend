@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { HOME_PAGE_ROUTE } from '../../config/routes';
+import { HOME_PAGE_ROUTE, SIGNIN_PAGE_ROUTE } from '../../config/routes';
 import ClientNavbarMobile from '../ClientNavbarMobile';
 
 const ClientNavbar: FC = () => {
@@ -58,7 +58,7 @@ const ClientNavbar: FC = () => {
             <NavLink
               className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"
               data-bs-toggle="modal"
-              to={HOME_PAGE_ROUTE}
+              to={SIGNIN_PAGE_ROUTE}
               role="button"
             >
               Sign in
