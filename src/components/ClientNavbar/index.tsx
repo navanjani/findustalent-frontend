@@ -1,10 +1,21 @@
 import React, { FC, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { HOME_PAGE_ROUTE, SIGNIN_PAGE_ROUTE } from '../../config/routes';
+import { useSelector } from 'react-redux';
+import {
+  DASHBOARD_ADD_JOB_ROUTE,
+  DASHBOARD_HOME_ROUTE,
+  HOME_PAGE_ROUTE,
+  SIGNIN_PAGE_ROUTE,
+} from '../../config/routes';
 import ClientNavbarMobile from '../ClientNavbarMobile';
+import { selectUser } from '../../store/user/selectors';
+import { useAppDispatch } from '../../store';
+import { getUserWithStoredToken } from '../../store/user/thunks';
 
 const ClientNavbar: FC = () => {
+  const dispatch = useAppDispatch();
   const [stickyClass, setStickyClass] = useState('');
+  const user = useSelector(selectUser);
 
   // https://stackoverflow.com/a/69723476
   const stickNavbar = () => {
@@ -24,6 +35,10 @@ const ClientNavbar: FC = () => {
       window.removeEventListener('scroll', stickNavbar);
     };
   }, []);
+
+  useEffect(() => {
+    dispatch(getUserWithStoredToken());
+  }, [dispatch]);
 
   return (
     <header className={`pxp-header fixed-top ${stickyClass}`}>
@@ -50,19 +65,30 @@ const ClientNavbar: FC = () => {
             </ul>
           </nav>
           <nav className="pxp-user-nav pxp-on-light d-none d-sm-flex">
-            <NavLink to={HOME_PAGE_ROUTE}>
+            <NavLink to={DASHBOARD_ADD_JOB_ROUTE}>
               <button type="button" className="btn rounded-pill pxp-nav-btn">
                 Post a Job
               </button>
             </NavLink>
-            <NavLink
-              className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"
-              data-bs-toggle="modal"
-              to={SIGNIN_PAGE_ROUTE}
-              role="button"
-            >
-              Sign in
-            </NavLink>
+            {user ? (
+              <NavLink
+                className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"
+                data-bs-toggle="modal"
+                to={DASHBOARD_HOME_ROUTE}
+                role="button"
+              >
+                Dashbaord
+              </NavLink>
+            ) : (
+              <NavLink
+                className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"
+                data-bs-toggle="modal"
+                to={SIGNIN_PAGE_ROUTE}
+                role="button"
+              >
+                Sign in
+              </NavLink>
+            )}
           </nav>
         </div>
       </div>

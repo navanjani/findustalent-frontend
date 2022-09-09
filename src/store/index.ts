@@ -3,14 +3,14 @@ import { useDispatch } from 'react-redux';
 
 import appStateReducer from './appState/slice';
 import userReducer from './user/slice';
-import companiesReducer from './companies/slice';
+import companyReducer from './company/slice';
 import jobsReducer from './jobs/slice';
 
 const store = configureStore({
   reducer: {
     appState: appStateReducer,
     user: userReducer,
-    companies: companiesReducer,
+    company: companyReducer,
     jobs: jobsReducer,
   },
 });

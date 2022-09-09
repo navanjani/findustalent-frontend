@@ -6,6 +6,7 @@ import { showMessageWithTimeout } from '../appState/thunks';
 import { loginSuccess, logOut, tokenStillValid } from './slice';
 import { AppDispatch, RootState } from '../index';
 import { apiError } from '../../helpers/apiError';
+import { setCompany } from '../company/slice';
 
 export const signUp =
   (firstName: string, lastName: string, email: string, password: string) => async (dispatch: AppDispatch) => {
@@ -62,7 +63,8 @@ export const getUserWithStoredToken = () => async (dispatch: AppDispatch, getSta
     });
 
     // token is still valid
-    dispatch(tokenStillValid({ user: response.data }));
+    dispatch(tokenStillValid({ user: response.data.user }));
+    dispatch(setCompany(response.data.company));
     dispatch(appDoneLoading());
   } catch (error: any) {
     apiError(dispatch, error);

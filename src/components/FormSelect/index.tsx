@@ -7,7 +7,7 @@ interface IOption {
 
 interface IFormSelect {
   label: string;
-  value: string;
+  value: string | number;
   options: IOption[];
   onChangeHandler: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
