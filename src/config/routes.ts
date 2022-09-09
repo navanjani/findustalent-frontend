@@ -6,3 +6,4 @@ export const DASHBOARD_HOME_ROUTE = '/dashboard';
 export const DASHBOARD_ADD_JOB_ROUTE = '/dashboard/add-job';
 export const RECRUITER_SIGNUP_PAGE_ROUTE = '/recruiter/signup';
 export const CANDIDATE_SIGNUP_PAGE_ROUTE = '/candidate/signup';
+export const DASHBOARD_MANAGE_JOBS_ROUTE = '/dashboard/manage-jobs';
