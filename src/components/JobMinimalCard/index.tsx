@@ -7,10 +7,7 @@ const JobMinimalCard: FC = () => (
     <div className="pxp-jobs-card-2 pxp-has-border">
       <div className="pxp-jobs-card-2-top">
         <NavLink to="/">
-          <span
-            className="pxp-jobs-card-2-company-logo"
-            style={{ backgroundImage: `url(${companyLogo})` }}
-          />
+          <span className="pxp-jobs-card-2-company-logo" style={{ backgroundImage: `url(${companyLogo})` }} />
         </NavLink>
         <div className="pxp-jobs-card-2-info">
           <NavLink to="/">

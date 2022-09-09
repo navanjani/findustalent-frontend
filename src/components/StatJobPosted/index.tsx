@@ -7,9 +7,7 @@ const StatJobPosted: FC = () => (
     </div>
     <div className="pxp-dashboard-stats-card-info">
       <div className="pxp-dashboard-stats-card-info-number">13</div>
-      <div className="pxp-dashboard-stats-card-info-text pxp-text-light">
-        Jobs posted
-      </div>
+      <div className="pxp-dashboard-stats-card-info-text pxp-text-light">Jobs posted</div>
     </div>
   </div>
 );

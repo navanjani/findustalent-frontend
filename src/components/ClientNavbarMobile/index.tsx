@@ -15,11 +15,7 @@ const ClientNavbarMobile: FC = () => (
       <div className="pxp-line-2" />
       <div className="pxp-line-3" />
     </NavLink>
-    <div
-      className="offcanvas offcanvas-start pxp-nav-mobile-container"
-      tabIndex={-1}
-      id="pxpMobileNav"
-    >
+    <div className="offcanvas offcanvas-start pxp-nav-mobile-container" tabIndex={-1} id="pxpMobileNav">
       <div className="offcanvas-header">
         <div className="pxp-logo">
           <a href="index.html" className="pxp-animate">

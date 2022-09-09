@@ -7,9 +7,7 @@ const StatApplications: FC = () => (
     </div>
     <div className="pxp-dashboard-stats-card-info">
       <div className="pxp-dashboard-stats-card-info-number">312</div>
-      <div className="pxp-dashboard-stats-card-info-text pxp-text-light">
-        Applications
-      </div>
+      <div className="pxp-dashboard-stats-card-info-text pxp-text-light">Applications</div>
     </div>
   </div>
 );

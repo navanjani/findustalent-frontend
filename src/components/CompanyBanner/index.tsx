@@ -11,10 +11,7 @@ const CompanyBanner: FC = () => (
     <div className="pxp-single-company-hero-caption">
       <div className="pxp-container">
         <div className="pxp-single-company-hero-content">
-          <div
-            className="pxp-single-company-hero-logo"
-            style={{ backgroundImage: `url(${companyLogo})` }}
-          />
+          <div className="pxp-single-company-hero-logo" style={{ backgroundImage: `url(${companyLogo})` }} />
           <div className="pxp-single-company-hero-title">
             <h1>Company Name</h1>
             <div className="pxp-single-company-hero-location">

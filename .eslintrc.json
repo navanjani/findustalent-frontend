@@ -114,6 +114,7 @@
     "indent": "off",
     "@typescript-eslint/indent": "off",
     "operator-linebreak": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }
