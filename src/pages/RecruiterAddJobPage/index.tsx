@@ -1,7 +1,6 @@
 import React, { FC, FormEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../store';
-import { setBodyColorLightBlue, setShowClientNavBar } from '../../store/appState/slice';
 import DashboardRecruiter from '../../components/DashboardRecruiter';
 import FormInputWithLabel from '../../components/FormInputWithLabel';
 import FormSelect from '../../components/FormSelect';
@@ -54,8 +53,6 @@ const RecruiterDashboardPage: FC = () => {
   };
 
   useEffect(() => {
-    dispatch(setBodyColorLightBlue());
-    dispatch(setShowClientNavBar(false));
     dispatch(fetchEmploymentTypes());
     dispatch(fetchCareerLevels());
     dispatch(fetchCompanyDepartments());

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import DashboardLeftNav from '../DashboardLeftNav';
 import DashboardLeftFooter from '../DashboardLeftFooter';
 import DashboardMobileNav from '../DashboardMobileNav';
@@ -6,12 +6,9 @@ import DashboardNav from '../DashboardNav';
 import DashboardFooter from '../DashboardFooter';
 import DashboardAppLogo from '../DashboardAppLogo';
 import Dashboard from '../Dashboard';
+import { IComponentWithChildren } from '../../types/components';
 
-interface DashboardRecruiterProps {
-  children: ReactNode;
-}
-
-const DashboardRecruiter: FC<DashboardRecruiterProps> = ({ children }) => (
+const DashboardRecruiter: FC<IComponentWithChildren> = ({ children }) => (
   <Dashboard>
     <div className="pxp-dashboard-side-panel d-none d-lg-block">
       <DashboardAppLogo />
