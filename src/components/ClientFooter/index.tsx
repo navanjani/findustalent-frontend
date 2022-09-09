@@ -12,8 +12,8 @@ const ClientFooter: FC = () => (
           <div className="col-lg-6 col-xl-5 col-xxl-4 mb-4">
             <div className="pxp-footer-logo">
               <NavLink to="/" className="pxp-animate">
-                <span style={{ color: 'var(--pxpMainColor)' }}>j</span>
-                obster
+                <span style={{ color: 'var(--pxpMainColor)' }}>findus</span>
+                talent
               </NavLink>
             </div>
             <div className="pxp-footer-section mt-3 mt-md-4">
@@ -43,14 +43,10 @@ const ClientFooter: FC = () => (
                       <a href="candidate-dashboard.html">Candidate Dashboard</a>
                     </li>
                     <li>
-                      <a href="candidate-dashboard-applications.html">
-                        My Applications
-                      </a>
+                      <a href="candidate-dashboard-applications.html">My Applications</a>
                     </li>
                     <li>
-                      <a href="candidate-dashboard-fav-jobs.html">
-                        Favourite Jobs
-                      </a>
+                      <a href="candidate-dashboard-fav-jobs.html">Favourite Jobs</a>
                     </li>
                     <li>
                       <a href="candidate-dashboard-inbox.html">My inbox</a>
@@ -123,10 +119,7 @@ const ClientFooter: FC = () => (
         </div>
       </div>
     </div>
-    <div
-      className="pxp-main-footer-bottom"
-      style={{ backgroundColor: 'var(--pxpSecondaryColor)' }}
-    >
+    <div className="pxp-main-footer-bottom" style={{ backgroundColor: 'var(--pxpSecondaryColor)' }}>
       <div className="pxp-container">
         <div className="row justify-content-between align-items-center">
           <div className="col-lg-auto">

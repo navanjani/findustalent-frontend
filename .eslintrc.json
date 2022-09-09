@@ -95,7 +95,8 @@
       "error",
       {
         "endOfLine": "auto",
-        "printWidth": 110
+        "printWidth": 110,
+        "tabWidth": 2
       }
     ],
     "max-len": [
@@ -109,6 +110,10 @@
       {
         "allow": "single-child"
       }
-    ]
+    ],
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
+    "operator-linebreak": "off",
+    "import/prefer-default-export": "off"
   }
 }

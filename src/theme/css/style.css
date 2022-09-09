@@ -30,7 +30,7 @@ Author URI: https://pixelprime.co/
  * 18.0 - Jobs list
  * 19.0 - Single job
  * 20.0 - Companies list
- * 21.0 - Single company
+ * 21.0 - Single companies
  * 22.0 - Company dashboard
  * 23.0 - Candidates list
  * 24.0 - Single candidate
@@ -3981,7 +3981,7 @@ a:hover {
 }
 
 /**
- * 21.0 - Single company
+ * 21.0 - Single companies
  */
 
 .pxp-single-company-hero {
