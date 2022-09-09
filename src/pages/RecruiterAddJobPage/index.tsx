@@ -6,17 +6,21 @@ import DashboardRecruiter from '../../components/DashboardRecruiter';
 import FormInputWithLabel from '../../components/FormInputWithLabel';
 import FormSelect from '../../components/FormSelect';
 import FormTextArea from '../../components/FormTextArea';
-import {
-  fetchCareerLevels,
-  fetchEmploymentTypes,
-  fetchCompanyDepartments,
-} from '../../store/companies/thunks';
+import { fetchCompanyDepartments } from '../../store/companies/thunks';
+import { selectDepartments } from '../../store/companies/selectors';
+import FormDatePicker from '../../components/FormDatePicker';
 import {
   selectCareerLevels,
-  selectDepartments,
+  selectCategories,
   selectEmploymentTypes,
-} from '../../store/companies/selectors';
-import FormDatePicker from '../../components/FormDatePicker';
+  selectSalaryRanges,
+} from '../../store/jobs/selectors';
+import {
+  fetchCareerLevels,
+  fetchCategories,
+  fetchEmploymentTypes,
+  fetchSalaryRanges,
+} from '../../store/jobs/thunks';
 // import { selectUser } from '../../store/user/selectors';
 
 const RecruiterDashboardPage: FC = () => {
@@ -24,6 +28,8 @@ const RecruiterDashboardPage: FC = () => {
   const employmentTypes = useSelector(selectEmploymentTypes);
   const careerLevels = useSelector(selectCareerLevels);
   const departments = useSelector(selectDepartments);
+  const salaryRanges = useSelector(selectSalaryRanges);
+  const categories = useSelector(selectCategories);
 
   // const user = useSelector(selectUser);
 
@@ -50,6 +56,8 @@ const RecruiterDashboardPage: FC = () => {
     dispatch(fetchEmploymentTypes());
     dispatch(fetchCareerLevels());
     dispatch(fetchCompanyDepartments());
+    dispatch(fetchSalaryRanges());
+    dispatch(fetchCategories());
   }, [dispatch]);
   return (
     <DashboardRecruiter>
@@ -83,7 +91,9 @@ const RecruiterDashboardPage: FC = () => {
               <FormSelect
                 label="Category"
                 value={formData.category}
-                options={[{ value: '1', label: 'Developers' }]}
+                options={
+                  categories && categories.map((category) => ({ value: category.id, label: category.name }))
+                }
                 onChangeHandler={(e) => setFormData({ ...formData, category: e.target.value })}
               />
             </div>
@@ -129,7 +139,9 @@ const RecruiterDashboardPage: FC = () => {
               <FormSelect
                 label="Salary range"
                 value={formData.salaryRange}
-                options={[{ value: '35000-55000', label: '35000-55000' }]}
+                options={
+                  salaryRanges && salaryRanges.map((range) => ({ value: range.id, label: range.range }))
+                }
                 onChangeHandler={(e) => setFormData({ ...formData, salaryRange: e.target.value })}
               />
             </div>
