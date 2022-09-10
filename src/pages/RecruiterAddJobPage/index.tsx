@@ -1,11 +1,11 @@
-import React, { FC, FormEvent, useEffect, useState } from 'react';
+import React, { FC, FormEvent, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../store';
 import DashboardRecruiter from '../../components/DashboardRecruiter';
 import FormInputWithLabel from '../../components/FormInputWithLabel';
 import FormSelect from '../../components/FormSelect';
 import FormTextArea from '../../components/FormTextArea';
-import { createNewJob, fetchCompanyDepartments } from '../../store/company/thunks';
+import { createNewJob } from '../../store/company/thunks';
 import { selectDepartments } from '../../store/company/selectors';
 import FormDatePicker from '../../components/FormDatePicker';
 import {
@@ -14,12 +14,6 @@ import {
   selectEmploymentTypes,
   selectSalaryRanges,
 } from '../../store/jobs/selectors';
-import {
-  fetchCareerLevels,
-  fetchCategories,
-  fetchEmploymentTypes,
-  fetchSalaryRanges,
-} from '../../store/jobs/thunks';
 import { IJob } from '../../types/jobs';
 
 const RecruiterDashboardPage: FC = () => {
@@ -34,13 +28,13 @@ const RecruiterDashboardPage: FC = () => {
 
   const initialFormData: IJob = {
     title: '',
-    category: 0,
+    categoryId: 0,
     location: '',
     description: '',
     careerLevel: 0,
     salaryRange: 0,
     employmentType: 0,
-    department: 0,
+    departmentId: 0,
     closingDate: '',
   };
 
@@ -52,13 +46,6 @@ const RecruiterDashboardPage: FC = () => {
     setFormData(initialFormData);
   };
 
-  useEffect(() => {
-    dispatch(fetchEmploymentTypes());
-    dispatch(fetchCareerLevels());
-    dispatch(fetchCompanyDepartments());
-    dispatch(fetchSalaryRanges());
-    dispatch(fetchCategories());
-  }, [dispatch]);
   return (
     <DashboardRecruiter>
       <h1>New Job Offer</h1>
@@ -90,11 +77,11 @@ const RecruiterDashboardPage: FC = () => {
             <div className="mb-3">
               <FormSelect
                 label="Category"
-                value={formData.category}
+                value={formData.categoryId}
                 options={
                   categories && categories.map((category) => ({ value: category.id, label: category.name }))
                 }
-                onChangeHandler={(e) => setFormData({ ...formData, category: Number(e.target.value) })}
+                onChangeHandler={(e) => setFormData({ ...formData, categoryId: Number(e.target.value) })}
               />
             </div>
           </div>
@@ -159,12 +146,12 @@ const RecruiterDashboardPage: FC = () => {
             <div className="mb-3">
               <FormSelect
                 label="Department"
-                value={formData.department}
+                value={formData.departmentId}
                 options={
                   departments &&
                   departments.map((department) => ({ value: department.id, label: department.name }))
                 }
-                onChangeHandler={(e) => setFormData({ ...formData, department: Number(e.target.value) })}
+                onChangeHandler={(e) => setFormData({ ...formData, departmentId: Number(e.target.value) })}
               />
             </div>
           </div>

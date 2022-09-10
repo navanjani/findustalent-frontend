@@ -62,6 +62,9 @@ const ClientNavbar: FC = () => {
               <li className="dropdown">
                 <NavLink to={HOME_PAGE_ROUTE}>Pricing</NavLink>
               </li>
+              <li className="dropdown">
+                <NavLink to={HOME_PAGE_ROUTE}>Candidate</NavLink>
+              </li>
             </ul>
           </nav>
           <nav className="pxp-user-nav pxp-on-light d-none d-sm-flex">

@@ -4,6 +4,8 @@ import {
   DASHBOARD_ADD_JOB_ROUTE,
   DASHBOARD_HOME_ROUTE,
   DASHBOARD_MANAGE_JOBS_ROUTE,
+  DASHBOARD_RECRUITER_CANDIDATE_ROUTE,
+  DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE,
 } from '../../config/routes';
 
 const DashboardLeftNav: FC = () => (
@@ -17,10 +19,13 @@ const DashboardLeftNav: FC = () => (
         </NavLink>
       </li>
       <li>
-        <a href="company-dashboard-profile.html">
+        <NavLink
+          to={DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE}
+          className={({ isActive }) => (isActive ? 'pxp-active' : '')}
+        >
           <span className="fa fa-pencil" />
           Edit Profile
-        </a>
+        </NavLink>
       </li>
       <li>
         <NavLink to={DASHBOARD_ADD_JOB_ROUTE} className={({ isActive }) => (isActive ? 'pxp-active' : '')}>
@@ -38,10 +43,13 @@ const DashboardLeftNav: FC = () => (
         </NavLink>
       </li>
       <li>
-        <a href="company-dashboard-candidates.html">
+        <NavLink
+          to={DASHBOARD_RECRUITER_CANDIDATE_ROUTE}
+          className={({ isActive }) => (isActive ? 'pxp-active' : '')}
+        >
           <span className="fa fa-user-circle-o" />
           Candidates
-        </a>
+        </NavLink>
       </li>
       <li>
         <a href="company-dashboard-subscriptions.html">

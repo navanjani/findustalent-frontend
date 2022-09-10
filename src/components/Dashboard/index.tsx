@@ -20,12 +20,10 @@ const Dashboard: FC<IComponentWithChildren> = ({ children }) => {
       navigate(SIGNIN_PAGE_ROUTE);
     }
   }, [dispatch]);
-
   useEffect(() => {
     dispatch(setBodyColorLightBlue());
     dispatch(setShowClientNavBar(false));
   }, [dispatch]);
-
   useMemo(() => {
     if (token === null && user === null) {
       navigate(SIGNIN_PAGE_ROUTE);
