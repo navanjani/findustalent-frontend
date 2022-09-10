@@ -7,6 +7,7 @@ export const selectSalaryRanges = (reduxState: RootState) => reduxState.jobs.sal
 export const selectCategories = (reduxState: RootState) => reduxState.jobs.categories;
 
 // https://stackoverflow.com/a/37642350
-export const selectCategoriesAsObject = (reduxState: RootState) => _.keyBy(reduxState.jobs.categories, 'id');
-export const selectEmploymentTypesAsObject = (reduxState: RootState) =>
+export const selectCategoriesAsObject: any = (reduxState: RootState) =>
+  _.keyBy(reduxState.jobs.categories, 'id');
+export const selectEmploymentTypesAsObject: any = (reduxState: RootState) =>
   _.keyBy(reduxState.jobs.employmentTypes, 'id');

@@ -1,16 +1,19 @@
 import React, { FC } from 'react';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { IJob } from '../../types/jobs';
 import { selectCategoriesAsObject, selectEmploymentTypesAsObject } from '../../store/jobs/selectors';
+import { ICategoryMap } from '../../types/categories';
+import { IEmploymentTypeMap } from '../../types/employmentTypes';
 
 interface IDashboardJobRow {
   job: IJob;
 }
 
 const DashboardJobRow: FC<IDashboardJobRow> = ({ job }: IDashboardJobRow) => {
-  const categories = useSelector(selectCategoriesAsObject);
-  const employmentTypes = useSelector(selectEmploymentTypesAsObject);
+  const categories: ICategoryMap = useSelector(selectCategoriesAsObject);
+  const employmentTypes: IEmploymentTypeMap = useSelector(selectEmploymentTypesAsObject);
 
   return (
     <tr>
@@ -41,7 +44,9 @@ const DashboardJobRow: FC<IDashboardJobRow> = ({ job }: IDashboardJobRow) => {
         <div className="pxp-company-dashboard-job-status">
           <span className="badge rounded-pill bg-success">Published</span>
         </div>
-        <div className="pxp-company-dashboard-job-date mt-1">{job.createdAt}</div>
+        <div className="pxp-company-dashboard-job-date mt-1">
+          {moment(job.createdAt).format('MMMM Do YYYY')}
+        </div>
       </td>
       <td>
         <div className="pxp-dashboard-table-options">
