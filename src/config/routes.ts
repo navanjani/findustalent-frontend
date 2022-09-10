@@ -10,3 +10,4 @@ export const DASHBOARD_MANAGE_JOBS_ROUTE = '/dashboard/manage-jobs';
 export const DASHBOARD_RECRUITER_CANDIDATE_ROUTE = '/dashboard/recruiter-candidates';
 export const DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE = '/dashboard/recruiter-edit-profile';
 export const CANDIDATE_DETAILS_ROUTE = '/candidate/:candidateId';
+export const DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE = '/dashboard/candidate-edit-profile';

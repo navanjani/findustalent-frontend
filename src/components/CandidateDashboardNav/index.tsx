@@ -1,10 +1,19 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../store/user/selectors';
 import candidateImage from '../../theme/images/ph-small.jpg';
+import { logOut } from '../../store/user/slice';
+import { useAppDispatch } from '../../store';
+
+import { DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE, DASHBOARD_HOME_ROUTE } from '../../config/routes';
 
 const CandidateDashboardNav: FC = () => {
   const user = useSelector(selectUser);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const toggleProfileDropdown = () => setShowProfileDropdown(!showProfileDropdown);
   return (
     <nav className="pxp-user-nav pxp-on-light">
       <div className="dropdown pxp-user-nav-dropdown pxp-user-notifications">
@@ -12,7 +21,7 @@ const CandidateDashboardNav: FC = () => {
           <span className="fa fa-bell-o" />
           <div className="pxp-user-notifications-counter">5</div>
         </span>
-        <ul className="dropdown-menu dropdown-menu-end">
+        <ul className="dropdown-menu dropdown-menu-end ">
           <li>
             <a className="dropdown-item" href="candidate-dashboard-notifications.html">
               <strong>
@@ -56,7 +65,13 @@ const CandidateDashboardNav: FC = () => {
           </li>
         </ul>
       </div>
-      <div className="dropdown pxp-user-nav-dropdown">
+      <div
+        className="dropdown pxp-user-nav-dropdown"
+        onClick={toggleProfileDropdown}
+        onKeyDown={toggleProfileDropdown}
+        role="button"
+        tabIndex={0}
+      >
         <span role="button" className="dropdown-toggle" data-bs-toggle="dropdown">
           <div
             className="pxp-user-nav-avatar pxp-cover"
@@ -64,21 +79,25 @@ const CandidateDashboardNav: FC = () => {
           />
           <div className="pxp-user-nav-name d-none d-md-block">{`${user?.firstName} ${user?.lastName}`}</div>
         </span>
-        <ul className="dropdown-menu dropdown-menu-end">
+        <ul className={`dropdown-menu dropdown-menu-end ${showProfileDropdown ? 'show' : ''}`}>
           <li>
-            <a className="dropdown-item" href="candidate-dashboard.html">
+            <button type="button" className="dropdown-item" onClick={() => navigate(DASHBOARD_HOME_ROUTE)}>
               Dashboard
-            </a>
+            </button>
           </li>
           <li>
-            <a className="dropdown-item" href="candidate-dashboard-profile.html">
+            <button
+              type="button"
+              className="dropdown-item"
+              onClick={() => navigate(DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE)}
+            >
               Edit profile
-            </a>
+            </button>
           </li>
           <li>
-            <a className="dropdown-item" href="index.html">
+            <button type="button" className="dropdown-item" onClick={() => dispatch(logOut())}>
               Logout
-            </a>
+            </button>
           </li>
         </ul>
       </div>

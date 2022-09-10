@@ -1,7 +1,11 @@
 import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { DASHBOARD_ADD_JOB_ROUTE } from '../../config/routes';
+import { NavLink, useNavigate } from 'react-router-dom';
+import {
+  DASHBOARD_ADD_JOB_ROUTE,
+  DASHBOARD_HOME_ROUTE,
+  DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE,
+} from '../../config/routes';
 import logoImage from '../../theme/images/company-logo-1.png';
 import { selectUser } from '../../store/user/selectors';
 import { useAppDispatch } from '../../store';
@@ -10,6 +14,7 @@ import { logOut } from '../../store/user/slice';
 const DashboardNav: FC = () => {
   const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
+  const navigate = useNavigate();
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const toggleProfileDropdown = () => setShowProfileDropdown(!showProfileDropdown);
 
@@ -93,14 +98,18 @@ const DashboardNav: FC = () => {
         </span>
         <ul className={`dropdown-menu dropdown-menu-end ${showProfileDropdown ? 'show' : ''}`}>
           <li>
-            <a className="dropdown-item" href="company-dashboard.html">
+            <button type="button" className="dropdown-item" onClick={() => navigate(DASHBOARD_HOME_ROUTE)}>
               Dashboard
-            </a>
+            </button>
           </li>
           <li>
-            <a className="dropdown-item" href="company-dashboard-profile.html">
+            <button
+              type="button"
+              className="dropdown-item"
+              onClick={() => navigate(DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE)}
+            >
               Edit profile
-            </a>
+            </button>
           </li>
           <li>
             <button type="button" className="dropdown-item" onClick={() => dispatch(logOut())}>
