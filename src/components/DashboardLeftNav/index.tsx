@@ -5,7 +5,9 @@ import {
   DASHBOARD_HOME_ROUTE,
   DASHBOARD_MANAGE_JOBS_ROUTE,
   DASHBOARD_RECRUITER_CANDIDATE_ROUTE,
+  DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE,
   DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE,
+  DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE,
 } from '../../config/routes';
 
 const DashboardLeftNav: FC = () => (
@@ -52,16 +54,22 @@ const DashboardLeftNav: FC = () => (
         </NavLink>
       </li>
       <li>
-        <a href="company-dashboard-subscriptions.html">
+        <NavLink
+          to={DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE}
+          className={({ isActive }) => (isActive ? 'pxp-active' : '')}
+        >
           <span className="fa fa-credit-card" />
           Subscriptions
-        </a>
+        </NavLink>
       </li>
       <li>
-        <a href="company-dashboard-password.html">
+        <NavLink
+          to={DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE}
+          className={({ isActive }) => (isActive ? 'pxp-active' : '')}
+        >
           <span className="fa fa-lock" />
           Change Password
-        </a>
+        </NavLink>
       </li>
     </ul>
     <div className="pxp-dashboard-side-label mt-3 mt-lg-4">Insights</div>

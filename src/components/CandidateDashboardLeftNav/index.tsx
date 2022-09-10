@@ -4,6 +4,7 @@ import {
   DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE,
   DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE,
   DASHBOARD_HOME_ROUTE,
+  DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE,
 } from '../../config/routes';
 
 const CandidateDashboardLeftNav: FC = () => (
@@ -41,7 +42,10 @@ const CandidateDashboardLeftNav: FC = () => (
         </NavLink>
       </li>
       <li>
-        <NavLink to={DASHBOARD_HOME_ROUTE} className={({ isActive }) => (isActive ? 'pxp-active' : '')}>
+        <NavLink
+          to={DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE}
+          className={({ isActive }) => (isActive ? 'pxp-active' : '')}
+        >
           <span className="fa fa-lock" />
           Change Password
         </NavLink>

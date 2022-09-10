@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import DashboardCandidate from '../../components/DashboardCandidate';
 
-const CanidateDashboardEditProfilePage: FC = () => (
+const CandidateDashboardEditProfilePage: FC = () => (
   <DashboardCandidate>
     <div className="pxp-dashboard-content-details">
       <h1>Edit Profile</h1>
@@ -453,4 +453,4 @@ const CanidateDashboardEditProfilePage: FC = () => (
     </div>
   </DashboardCandidate>
 );
-export default CanidateDashboardEditProfilePage;
+export default CandidateDashboardEditProfilePage;
