@@ -11,3 +11,4 @@ export const DASHBOARD_RECRUITER_CANDIDATE_ROUTE = '/dashboard/recruiter-candida
 export const DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE = '/dashboard/recruiter-edit-profile';
 export const CANDIDATE_DETAILS_ROUTE = '/candidate/:candidateId';
 export const DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE = '/dashboard/candidate-edit-profile';
+export const DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE = '/dashboard/candidate-applications';
