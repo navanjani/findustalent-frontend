@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface IProfile {
-  type: number;
+  userType: number;
   firstName: string;
   lastName: string;
   companyId: number;

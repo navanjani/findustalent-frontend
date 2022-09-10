@@ -13,8 +13,8 @@ const SigninPage: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('hi@navanjani.com');
-  const [password, setPassword] = useState('recuiter1@2022');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const token = useSelector(selectToken);
   // const user = useSelector(selectToken);
 

@@ -32,6 +32,9 @@ export const appStateSlice = createSlice({
     setBodyColorWhite: (state) => {
       state.bodyColor = '#FFFFFF';
     },
+    setBodyColorLightPink: (state) => {
+      state.bodyColor = 'var(--pxpSecondaryColorLight)';
+    },
   },
 });
 
@@ -43,6 +46,7 @@ export const {
   setShowClientNavBar,
   setBodyColorLightBlue,
   setBodyColorWhite,
+  setBodyColorLightPink,
 } = appStateSlice.actions;
 
 export default appStateSlice.reducer;

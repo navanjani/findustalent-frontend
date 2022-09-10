@@ -11,6 +11,9 @@ import {
   CANDIDATE_SIGNUP_PAGE_ROUTE,
   SIGNIN_PAGE_ROUTE,
   DASHBOARD_MANAGE_JOBS_ROUTE,
+  DASHBOARD_RECRUITER_CANDIDATE_ROUTE,
+  DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE,
+  CANDIDATE_DETAILS_ROUTE,
 } from './config/routes';
 import HomePage from './pages/HomePage';
 import './App.scss';
@@ -25,6 +28,9 @@ import RecruiterSignupPage from './pages/RecruiterSignupPage';
 import CandidateSignupPage from './pages/CandidateSignupPage';
 import SigninPage from './pages/SigninPage';
 import RecruiterManageJobPage from './pages/RecruiterManageJobPage';
+import RecruiterCandidatePage from './pages/RecruiterCandidatePage';
+import RecruiterEditProfilePage from './pages/RecruiterEditProfilePage';
+import CandidateDetailPage from './pages/CandidateDetailPage';
 
 function App() {
   const showClientNavBar = useSelector(selectShowClientNavBar);
@@ -40,8 +46,11 @@ function App() {
         <Route path={DASHBOARD_HOME_ROUTE} element={<DashboardPage />} />
         <Route path={DASHBOARD_ADD_JOB_ROUTE} element={<RecruiterAddJobPage />} />
         <Route path={DASHBOARD_MANAGE_JOBS_ROUTE} element={<RecruiterManageJobPage />} />
+        <Route path={DASHBOARD_RECRUITER_CANDIDATE_ROUTE} element={<RecruiterCandidatePage />} />
+        <Route path={DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE} element={<RecruiterEditProfilePage />} />
         <Route path={RECRUITER_SIGNUP_PAGE_ROUTE} element={<RecruiterSignupPage />} />
         <Route path={CANDIDATE_SIGNUP_PAGE_ROUTE} element={<CandidateSignupPage />} />
+        <Route path={CANDIDATE_DETAILS_ROUTE} element={<CandidateDetailPage />} />
       </Routes>
       {showClientNavBar && <ClientFooter />}
     </div>

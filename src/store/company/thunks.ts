@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { apiUrl } from '../../config/constants';
 import { AppDispatch, RootState } from '../index';
 import { appDoneLoading, appLoading } from '../appState/slice';
 import { setDepartments, setJobs } from './slice';
 import { apiError } from '../../helpers/apiError';
 import { IJob } from '../../types/jobs';
+import { apiUrl } from '../../config/constants';
+import { selectUserCompany } from './selectors';
 
 export const fetchCompanyDepartments = () => async (dispatch: AppDispatch, getState: () => RootState) => {
   dispatch(appLoading());
@@ -39,4 +40,14 @@ export const createNewJob = (newJob: IJob) => async (dispatch: AppDispatch, getS
   }
 };
 
-// export const fetchFormFieldData = () => async (dispatch: AppDispatch, getState: () => RootState) => {};
+export const fetchCompanyJobs = () => async (dispatch: AppDispatch, getState: () => RootState) => {
+  try {
+    dispatch(appLoading());
+    const company = selectUserCompany(getState());
+    const response = await axios.get(`${apiUrl}/companies/${company?.slug}/jobs`);
+    dispatch(setJobs(response.data.jobs));
+  } catch (e) {
+    apiError(dispatch, e);
+    dispatch(appDoneLoading());
+  }
+};

@@ -2,11 +2,13 @@ export interface IJob {
   id?: number;
   title: string;
   location: string;
-  category: number;
+  categoryId: number;
   description: string;
   careerLevel: number;
   employmentType: number;
   salaryRange: number;
-  department: number;
+  departmentId: number;
   closingDate: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
