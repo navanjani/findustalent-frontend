@@ -16,19 +16,22 @@ const Dashboard: FC<IComponentWithChildren> = ({ children }) => {
 
   useEffect(() => {
     dispatch(getUserWithStoredToken());
-    if (token === null && user === null) {
+    if (token === null) {
       navigate(SIGNIN_PAGE_ROUTE);
     }
   }, [dispatch]);
+
   useEffect(() => {
     dispatch(setBodyColorLightBlue());
     dispatch(setShowClientNavBar(false));
   }, [dispatch]);
+
   useMemo(() => {
-    if (token === null && user === null) {
+    if (token === null) {
       navigate(SIGNIN_PAGE_ROUTE);
     }
   }, [token, user]);
+
   return <div className="dashboard-wrapper">{children}</div>;
 };
 

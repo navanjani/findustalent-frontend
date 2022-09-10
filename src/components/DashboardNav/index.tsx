@@ -1,12 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { DASHBOARD_ADD_JOB_ROUTE } from '../../config/routes';
 import logoImage from '../../theme/images/company-logo-1.png';
 import { selectUser } from '../../store/user/selectors';
+import { useAppDispatch } from '../../store';
+import { logOut } from '../../store/user/slice';
 
 const DashboardNav: FC = () => {
+  const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const toggleProfileDropdown = () => setShowProfileDropdown(!showProfileDropdown);
 
   return (
     <nav className="pxp-user-nav pxp-on-light">
@@ -75,12 +80,18 @@ const DashboardNav: FC = () => {
           </li>
         </ul>
       </div>
-      <div className="dropdown pxp-user-nav-dropdown">
-        <span role="button" className="dropdown-toggle" data-bs-toggle="dropdown">
+      <div
+        className="dropdown pxp-user-nav-dropdown"
+        onClick={toggleProfileDropdown}
+        onKeyDown={toggleProfileDropdown}
+        role="button"
+        tabIndex={0}
+      >
+        <span className="dropdown-toggle">
           <div className="pxp-user-nav-avatar pxp-cover" style={{ backgroundImage: `url(${logoImage})` }} />
           <div className="pxp-user-nav-name d-none d-md-block">{`${user?.firstName} ${user?.lastName} `}</div>
         </span>
-        <ul className="dropdown-menu dropdown-menu-end">
+        <ul className={`dropdown-menu dropdown-menu-end ${showProfileDropdown ? 'show' : ''}`}>
           <li>
             <a className="dropdown-item" href="company-dashboard.html">
               Dashboard
@@ -92,9 +103,9 @@ const DashboardNav: FC = () => {
             </a>
           </li>
           <li>
-            <a className="dropdown-item" href="index.html">
+            <button type="button" className="dropdown-item" onClick={() => dispatch(logOut())}>
               Logout
-            </a>
+            </button>
           </li>
         </ul>
       </div>
