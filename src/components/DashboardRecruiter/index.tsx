@@ -22,9 +22,9 @@ const DashboardRecruiter: FC<IComponentWithChildren> = ({ children }) => {
   useEffect(() => {
     dispatch(fetchEmploymentTypes());
     dispatch(fetchCareerLevels());
-    dispatch(fetchCompanyDepartments());
     dispatch(fetchSalaryRanges());
     dispatch(fetchCategories());
+    dispatch(fetchCompanyDepartments());
   }, [dispatch]);
 
   return (

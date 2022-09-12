@@ -1,3 +1,5 @@
+import { ICategory } from './categories';
+
 export interface IJob {
   id?: number;
   title: string;
@@ -11,4 +13,5 @@ export interface IJob {
   closingDate: string;
   createdAt?: string;
   updatedAt?: string;
+  category?: ICategory;
 }

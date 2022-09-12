@@ -9,5 +9,6 @@ export const selectCategories = (reduxState: RootState) => reduxState.jobs.categ
 // https://stackoverflow.com/a/37642350
 export const selectCategoriesAsObject: any = (reduxState: RootState) =>
   _.keyBy(reduxState.jobs.categories, 'id');
+/* eslint no-confusing-arrow:0 */
 export const selectEmploymentTypesAsObject: any = (reduxState: RootState) =>
-  _.keyBy(reduxState.jobs.employmentTypes, 'id');
+  reduxState.jobs.employmentTypes ? _.keyBy(reduxState.jobs.employmentTypes, 'id') : null;

@@ -5,6 +5,7 @@ import appStateReducer from './appState/slice';
 import userReducer from './user/slice';
 import companyReducer from './company/slice';
 import jobsReducer from './jobs/slice';
+import publicReducer from './public/slice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     user: userReducer,
     company: companyReducer,
     jobs: jobsReducer,
+    public: publicReducer,
   },
 });
 

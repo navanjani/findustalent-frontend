@@ -14,7 +14,7 @@ interface IUser {
 
 const initialState: IUser = {
   token: localStorage.getItem('token'),
-  profile: null,
+  profile: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '{}') : null,
 };
 
 export const userSlice = createSlice({
@@ -23,16 +23,19 @@ export const userSlice = createSlice({
   reducers: {
     loginSuccess: (state, action) => {
       localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('user', JSON.stringify(action.payload.user));
       state.token = action.payload.token;
       state.profile = action.payload.user;
     },
     logOut: (state) => {
       localStorage.removeItem('token');
+      localStorage.removeItem('user');
       state.token = null;
       state.profile = null;
     },
     tokenStillValid: (state, action) => {
       state.profile = action.payload.user;
+      localStorage.setItem('user', JSON.stringify(action.payload.user));
     },
   },
 });

@@ -5,7 +5,6 @@ import { setDepartments, setJobs } from './slice';
 import { apiError } from '../../helpers/apiError';
 import { IJob } from '../../types/jobs';
 import { apiUrl } from '../../config/constants';
-import { selectUserCompany } from './selectors';
 
 export const fetchCompanyDepartments = () => async (dispatch: AppDispatch, getState: () => RootState) => {
   dispatch(appLoading());
@@ -43,8 +42,12 @@ export const createNewJob = (newJob: IJob) => async (dispatch: AppDispatch, getS
 export const fetchCompanyJobs = () => async (dispatch: AppDispatch, getState: () => RootState) => {
   try {
     dispatch(appLoading());
-    const company = selectUserCompany(getState());
-    const response = await axios.get(`${apiUrl}/companies/${company?.slug}/jobs`);
+    const { token, profile } = getState().user;
+    const response = await axios.get(`${apiUrl}/companies/${profile?.companyId}/jobs`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     dispatch(setJobs(response.data.jobs));
   } catch (e) {
     apiError(dispatch, e);
