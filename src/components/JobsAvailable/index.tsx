@@ -5,8 +5,8 @@ import { ICompany } from '../../types/companies';
 import { IEmploymentTypeMap } from '../../types/employmentTypes';
 
 interface IJobsAvailable {
-  company: ICompany | null;
-  jobs: IJob[] | null;
+  company: ICompany;
+  jobs: IJob[];
   employmentTypes: IEmploymentTypeMap | null;
 }
 
@@ -24,6 +24,7 @@ const JobsAvailable: FC<IJobsAvailable> = ({ jobs, company, employmentTypes }: I
             key={job?.id}
             job={job}
             employmentType={employmentTypes[job?.employmentType]?.type}
+            company={company}
           />
         ))}
     </div>

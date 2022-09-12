@@ -4,10 +4,12 @@ import { ICompany } from '../../types/companies';
 
 interface IPublic {
   jobs: IJob[];
+  job: IJob | null;
   company: ICompany | null;
 }
 const initialState: IPublic = {
   jobs: [],
+  job: null,
   company: null,
 };
 export const publicSlice = createSlice({
@@ -20,7 +22,10 @@ export const publicSlice = createSlice({
     setPublicCompany: (state, action) => {
       state.company = action.payload;
     },
+    setCurrentJob: (state, action) => {
+      state.job = action.payload;
+    },
   },
 });
-export const { setPublicJobs, setPublicCompany } = publicSlice.actions;
+export const { setPublicJobs, setPublicCompany, setCurrentJob } = publicSlice.actions;
 export default publicSlice.reducer;

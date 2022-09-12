@@ -1,23 +1,39 @@
-import React, { ChangeEvent, FC } from 'react';
+import React, { FC } from 'react';
+import { Editor } from '@tinymce/tinymce-react';
+import { TINY_MCE_KEY } from '../../config/constants';
 
 interface IFormInput {
   label: string;
   value: string;
   placeholder: string;
-  onChangeHandler: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  onChangeHandler: (e: string) => void;
 }
 
-const FormTextArea: FC<IFormInput> = ({ label, value, onChangeHandler, placeholder }: IFormInput) => (
+const FormTextArea: FC<IFormInput> = ({ label, value, placeholder, onChangeHandler }: IFormInput) => (
   <div className="mb-3">
     <label htmlFor="pxp-company-job-description" className="form-label">
       {label}
     </label>
-    <textarea
-      onChange={onChangeHandler}
-      className="form-control"
-      id="pxp-company-job-description"
-      placeholder={placeholder}
+    <Editor
+      apiKey={TINY_MCE_KEY}
+      initialValue={placeholder}
       value={value}
+      init={{
+        height: 400,
+        menubar: true,
+        plugins: [
+          'autolink',
+          'lists',
+          'link',
+          'image',
+          'anchor',
+          'code',
+          'insertdatetime',
+          'table',
+          'wordcount',
+        ],
+      }}
+      onEditorChange={(s) => onChangeHandler(s)}
     />
   </div>
 );

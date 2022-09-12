@@ -16,3 +16,4 @@ export const DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE = '/dashboard/candidate/c
 export const DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE = '/dashboard/recruiter/change-password';
 export const DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE = '/dashboard/recruiter/subscriptions';
 export const CONTACT_US_ROUTE = '/contact-us';
+export const JOB_DETAILS_ROUTE = '/c/:companySlug/:jobSlug';

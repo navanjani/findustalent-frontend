@@ -20,6 +20,7 @@ import {
   DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE,
   DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE,
   CONTACT_US_ROUTE,
+  JOB_DETAILS_ROUTE,
 } from './config/routes';
 import HomePage from './pages/HomePage';
 import './App.scss';
@@ -43,6 +44,7 @@ import CandidateDashboardChangePasswordPage from './pages/CandidateDashboardChan
 import RecruiterDashboardChangePasswordPage from './pages/RecruiterDashboardChangePasswordPage';
 import RecruiterDashboardSubscriptionsPage from './pages/RecruiterDashboardSubscriptionsPage';
 import ContactUsPage from './pages/ContactUsPage';
+import JobDetailPage from './pages/JobDetailPage';
 
 function App() {
   const showClientNavBar = useSelector(selectShowClientNavBar);
@@ -68,7 +70,6 @@ function App() {
         <Route path={RECRUITER_SIGNUP_PAGE_ROUTE} element={<RecruiterSignupPage />} />
         <Route path={CANDIDATE_SIGNUP_PAGE_ROUTE} element={<CandidateSignupPage />} />
         <Route path={CANDIDATE_DETAILS_ROUTE} element={<CandidateDetailPage />} />
-
         <Route
           path={DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE}
           element={<CandidateDashboardEditProfilePage />}
@@ -85,6 +86,7 @@ function App() {
           path={DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE}
           element={<RecruiterDashboardSubscriptionsPage />}
         />
+        <Route path={JOB_DETAILS_ROUTE} element={<JobDetailPage />} />
       </Routes>
       {showClientNavBar && <ClientFooter />}
     </div>

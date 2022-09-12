@@ -2,13 +2,15 @@ import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import companyLogo from '../../theme/images/company-logo-2.png';
 import { IJob } from '../../types/jobs';
+import { ICompany } from '../../types/companies';
 
 interface IJobMinimalCard {
   job: IJob;
+  company: ICompany;
   employmentType: string;
 }
 
-const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType }: IJobMinimalCard) => (
+const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType, company }: IJobMinimalCard) => (
   <div className="col-xl-6 pxp-jobs-card-2-container">
     <div className="pxp-jobs-card-2 pxp-has-border">
       <div className="pxp-jobs-card-2-top">
@@ -16,7 +18,7 @@ const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType }: IJobMinima
           <span className="pxp-jobs-card-2-company-logo" style={{ backgroundImage: `url(${companyLogo})` }} />
         </NavLink>
         <div className="pxp-jobs-card-2-info">
-          <NavLink to="/">
+          <NavLink to={`/c/${company.slug}/${job.slug}`}>
             <span className="pxp-jobs-card-2-title">{job.title}</span>
           </NavLink>
           <div className="pxp-jobs-card-2-details">

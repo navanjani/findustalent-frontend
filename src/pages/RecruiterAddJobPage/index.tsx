@@ -46,6 +46,8 @@ const RecruiterDashboardPage: FC = () => {
     setFormData(initialFormData);
   };
 
+  console.log(formData);
+
   return (
     <DashboardRecruiter>
       <h1>New Job Offer</h1>
@@ -101,7 +103,7 @@ const RecruiterDashboardPage: FC = () => {
             label="Job description"
             placeholder="Type the description here"
             value={formData.description}
-            onChangeHandler={(e) => setFormData({ ...formData, description: e.target.value })}
+            onChangeHandler={(e) => setFormData({ ...formData, description: e })}
           />
         </div>
 

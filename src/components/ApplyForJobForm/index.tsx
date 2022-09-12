@@ -20,7 +20,7 @@ const ApplyForJobForm: FC = () => {
   };
   return (
     <div className="pxp-dashboard-content-details">
-      <form>
+      <form onSubmit={handleOnSubmit}>
         <div className="row mt-4 mt-lg-5">
           <div className="col-xxl-8">
             <div className="mb-3">
@@ -30,7 +30,7 @@ const ApplyForJobForm: FC = () => {
                 label="CV or resume *"
                 placeholder="Upload a file or drag and drop here."
                 type="text"
-              ></FormInputWithLabel>
+              />
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ const ApplyForJobForm: FC = () => {
                 label="First Name"
                 placeholder="Your first name"
                 type="text"
-              ></FormInputWithLabel>
+              />
             </div>
           </div>
           <div className="col-xxl-8">
@@ -56,7 +56,7 @@ const ApplyForJobForm: FC = () => {
                 label="Last Name"
                 placeholder="Your last name"
                 type="text"
-              ></FormInputWithLabel>
+              />
             </div>
           </div>
           <div className="col-xxl-8">
@@ -67,7 +67,7 @@ const ApplyForJobForm: FC = () => {
                 label="Email address"
                 placeholder="Your email address"
                 type="text"
-              ></FormInputWithLabel>
+              />
             </div>
           </div>
           <div className="col-xxl-8">
@@ -78,7 +78,7 @@ const ApplyForJobForm: FC = () => {
                 label="Phone Number"
                 placeholder="Your phone number"
                 type="text"
-              ></FormInputWithLabel>
+              />
             </div>
           </div>
           <div className="col-xxl-8">
@@ -87,8 +87,8 @@ const ApplyForJobForm: FC = () => {
                 label="Cover Letter"
                 value={formData.coverLetter}
                 placeholder="insert your cover letter here"
-                onChangeHandler={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
-              ></FormTextArea>
+                onChangeHandler={(e) => setFormData({ ...formData, coverLetter: e })}
+              />
             </div>
           </div>
         </div>

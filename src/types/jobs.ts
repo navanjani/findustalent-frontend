@@ -2,6 +2,7 @@ import { ICategory } from './categories';
 
 export interface IJob {
   id?: number;
+  slug?: string;
   title: string;
   location: string;
   categoryId: number;
