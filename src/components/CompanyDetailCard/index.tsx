@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const CompanyDetailCard: FC = () => (
-  <div className="pxp-single-company-side-panel mt-5 mt-lg-0">
+  <>
     <div className="mt-4">
       <div className="pxp-single-company-side-info-label pxp-text-light">Industry</div>
       <div className="pxp-single-company-side-info-data">Software</div>
@@ -57,6 +57,6 @@ const CompanyDetailCard: FC = () => (
         </ul>
       </div>
     </div>
-  </div>
+  </>
 );
 export default CompanyDetailCard;

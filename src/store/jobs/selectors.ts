@@ -12,3 +12,9 @@ export const selectCategoriesAsObject: any = (reduxState: RootState) =>
 /* eslint no-confusing-arrow:0 */
 export const selectEmploymentTypesAsObject: any = (reduxState: RootState) =>
   reduxState.jobs.employmentTypes ? _.keyBy(reduxState.jobs.employmentTypes, 'id') : null;
+
+export const selectCareerLevelsAsObject: any = (reduxState: RootState) =>
+  reduxState.jobs.careerLevels ? _.keyBy(reduxState.jobs.careerLevels, 'id') : null;
+
+export const selectSalaryRangesAsObject: any = (reduxState: RootState) =>
+  reduxState.jobs.salaryRanges ? _.keyBy(reduxState.jobs.salaryRanges, 'id') : null;

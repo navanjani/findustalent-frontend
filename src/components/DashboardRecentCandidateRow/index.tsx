@@ -1,8 +1,15 @@
 import React, { FC } from 'react';
 
 import smallProfile from '../../theme/images/ph-small.jpg';
+import { IJobCandidate } from '../../types/jobCandidates';
 
-const DashboardRecentCandidateRow: FC = () => (
+interface IDashboardRecentCandidateRow {
+  candidate: IJobCandidate;
+}
+
+const DashboardRecentCandidateRow: FC<IDashboardRecentCandidateRow> = ({
+  candidate,
+}: IDashboardRecentCandidateRow) => (
   <tr>
     <td style={{ width: '3%' }}>
       <div
@@ -11,15 +18,17 @@ const DashboardRecentCandidateRow: FC = () => (
       />
     </td>
     <td style={{ width: '25%' }}>
-      <div className="pxp-company-dashboard-candidate-name">Scott Goodwin</div>
+      <div className="pxp-company-dashboard-candidate-name">
+        {candidate.firstName} {candidate.lastName}
+      </div>
     </td>
     <td style={{ width: '25%' }}>
-      <div className="pxp-company-dashboard-candidate-title">UI Designer</div>
+      <div className="pxp-company-dashboard-candidate-title">{candidate.job?.title}</div>
     </td>
     <td>
       <div className="pxp-company-dashboard-candidate-location">
         <span className="fa fa-globe" />
-        London, UK
+        {candidate.job?.location}
       </div>
     </td>
     <td>

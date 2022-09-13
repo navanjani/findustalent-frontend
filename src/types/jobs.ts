@@ -1,4 +1,5 @@
 import { ICategory } from './categories';
+import { IDepartment } from './departments';
 
 export interface IJob {
   id?: number;
@@ -15,4 +16,5 @@ export interface IJob {
   createdAt?: string;
   updatedAt?: string;
   category?: ICategory;
+  department?: IDepartment;
 }

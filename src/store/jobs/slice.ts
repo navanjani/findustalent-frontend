@@ -1,20 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ICategory } from '../../types/categories';
 import { IEmploymentType } from '../../types/employmentTypes';
-
-interface ICareerLevel {
-  id: number;
-  level: string;
-}
-interface ISalaryRanges {
-  id: number;
-  range: string;
-}
+import { ISalaryRange } from '../../types/salaryRanges';
+import { ICareerLevel } from '../../types/careerLevels';
 
 interface ICompanies {
   employmentTypes: IEmploymentType[];
   careerLevels: ICareerLevel[];
-  salaryRanges: ISalaryRanges[];
+  salaryRanges: ISalaryRange[];
   categories: ICategory[];
 }
 

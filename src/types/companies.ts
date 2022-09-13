@@ -7,4 +7,5 @@ export interface ICompany {
   subscriptionId: number;
   subscriptionValidTill: string;
   textColor: string;
+  domain: string;
 }

@@ -115,7 +115,9 @@ const JobDetailPage: FC = () => {
                       type="button"
                       disabled={showApplyForm}
                       className="btn rounded-pill pxp-section-cta"
-                      onClick={() => setShowApplyForm(true)}
+                      onClick={() => {
+                        setShowApplyForm(true);
+                      }}
                     >
                       Apply Now
                     </button>

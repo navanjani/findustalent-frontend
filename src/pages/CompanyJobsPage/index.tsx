@@ -43,7 +43,9 @@ const CompanyJobsPage: FC = () => {
                 </section>
               </div>
               <div className="col-lg-5 col-xl-4 col-xxl-3">
-                <CompanyDetailCard />
+                <div className="pxp-single-company-side-panel mt-5 mt-lg-0">
+                  <CompanyDetailCard />
+                </div>
               </div>
             </div>
           </div>
