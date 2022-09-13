@@ -1,16 +1,19 @@
-import React, { FC, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useEffect, useRef, useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
 import axios from 'axios';
 import FormInputWithLabel from '../FormInputWithLabel';
 import FormTextArea from '../FormTextArea';
 import { apiUrl, UPLOADCARE_KEY } from '../../config/constants';
-import { IJobCandidate } from '../../types/jobCandidate';
+import { IJobCandidate } from '../../types/jobCandidates';
 
 interface IApplyforJobForm {
   companySlug: string;
   jobSlug: string;
 }
 const ApplyForJobForm: FC<IApplyforJobForm> = ({ companySlug, jobSlug }: IApplyforJobForm) => {
+  // Create a ref to accessed when the component is fully rendered
+  const ApplyFormDiv = useRef<HTMLDivElement>(null);
+
   const initialFormData: IJobCandidate = {
     firstName: '',
     lastName: '',
@@ -20,8 +23,10 @@ const ApplyForJobForm: FC<IApplyforJobForm> = ({ companySlug, jobSlug }: IApplyf
     phoneNumber: '',
     coverLetter: '',
   };
+
   const [fileUploading, setFileUploading] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
+
   const applyJob = async (application: IJobCandidate) => {
     try {
       const response = await axios.post(
@@ -33,13 +38,21 @@ const ApplyForJobForm: FC<IApplyforJobForm> = ({ companySlug, jobSlug }: IApplyf
       console.log(e.message);
     }
   };
+
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     applyJob(formData);
     // setFormData(initialFormData);
   };
+
+  useEffect(() => {
+    // Scroll to view when the component is loaded
+    // @ts-ignore
+    ApplyFormDiv.current.scrollIntoView({ behavior: 'smooth' });
+  }, [ApplyFormDiv]);
+
   return (
-    <div className="pxp-dashboard-content-details">
+    <div className="pxp-dashboard-content-details" ref={ApplyFormDiv}>
       <form onSubmit={handleOnSubmit}>
         <h4>Personal Information</h4>
         <p>Tell us something about yourself</p>
