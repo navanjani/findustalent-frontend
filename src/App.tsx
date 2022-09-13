@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import {
-  COMPANY_JOBS_ROUTE,
+  DYNAMIC_COMPANY_JOBS_ROUTE,
   HOME_PAGE_ROUTE,
   SIGNUP_PAGE_ROUTE,
   DASHBOARD_HOME_ROUTE,
@@ -13,14 +13,14 @@ import {
   DASHBOARD_MANAGE_JOBS_ROUTE,
   DASHBOARD_RECRUITER_CANDIDATE_ROUTE,
   DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE,
-  CANDIDATE_DETAILS_ROUTE,
+  DYNAMIC_CANDIDATE_DETAILS_ROUTE,
   DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE,
   DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE,
   DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE,
   DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE,
   DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE,
   CONTACT_US_ROUTE,
-  JOB_DETAILS_ROUTE,
+  DYNAMIC_JOB_DETAILS_ROUTE,
 } from './config/routes';
 import HomePage from './pages/HomePage';
 import './App.scss';
@@ -54,7 +54,7 @@ function App() {
       {showClientNavBar && <ClientNavbar />}
       <Routes>
         <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
-        <Route path={COMPANY_JOBS_ROUTE} element={<CompanyJobsPage />} />
+        <Route path={DYNAMIC_COMPANY_JOBS_ROUTE} element={<CompanyJobsPage />} />
         <Route path={SIGNUP_PAGE_ROUTE} element={<SignUpPage />} />
         <Route path={SIGNIN_PAGE_ROUTE} element={<SigninPage />} />
         <Route path={CONTACT_US_ROUTE} element={<ContactUsPage />} />
@@ -69,7 +69,7 @@ function App() {
         <Route path={DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE} element={<RecruiterEditProfilePage />} />
         <Route path={RECRUITER_SIGNUP_PAGE_ROUTE} element={<RecruiterSignupPage />} />
         <Route path={CANDIDATE_SIGNUP_PAGE_ROUTE} element={<CandidateSignupPage />} />
-        <Route path={CANDIDATE_DETAILS_ROUTE} element={<CandidateDetailPage />} />
+        <Route path={DYNAMIC_CANDIDATE_DETAILS_ROUTE} element={<CandidateDetailPage />} />
         <Route
           path={DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE}
           element={<CandidateDashboardEditProfilePage />}
@@ -86,7 +86,7 @@ function App() {
           path={DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE}
           element={<RecruiterDashboardSubscriptionsPage />}
         />
-        <Route path={JOB_DETAILS_ROUTE} element={<JobDetailPage />} />
+        <Route path={DYNAMIC_JOB_DETAILS_ROUTE} element={<JobDetailPage />} />
       </Routes>
       {showClientNavBar && <ClientFooter />}
     </div>

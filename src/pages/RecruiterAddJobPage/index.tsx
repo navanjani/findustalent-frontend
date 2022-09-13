@@ -24,6 +24,29 @@ const RecruiterDashboardPage: FC = () => {
   const salaryRanges = useSelector(selectSalaryRanges);
   const categories = useSelector(selectCategories);
 
+  const descriptionPlaceholder = String(
+    '<h4>Overview</h4>\n' +
+      '<p>Description</p>\n' +
+      '<div class="mt-4">\n' +
+      '  <h4>Responsibilities</h4>\n' +
+      '  <ul>\n' +
+      '    <li>List</li>\n' +
+      '  </ul>\n' +
+      '</div>\n' +
+      '<div class="mt-4">\n' +
+      '  <h4>Requirements</h4>\n' +
+      '  <ul>\n' +
+      '    <li>List</li>\n' +
+      '  </ul>\n' +
+      '</div>\n' +
+      '<div class="mt-4">\n' +
+      '  <h4>Skills</h4>\n' +
+      '  <ul>\n' +
+      '    <li>List</li>\n' +
+      '  </ul>\n' +
+      '</div>',
+  );
+
   // const user = useSelector(selectUser);
 
   const initialFormData: IJob = {
@@ -101,7 +124,7 @@ const RecruiterDashboardPage: FC = () => {
         <div className="mb-3">
           <FormTextArea
             label="Job description"
-            placeholder="Type the description here"
+            placeholder={descriptionPlaceholder}
             value={formData.description}
             onChangeHandler={(e) => setFormData({ ...formData, description: e })}
           />

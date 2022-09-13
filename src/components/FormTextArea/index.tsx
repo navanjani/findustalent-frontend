@@ -19,8 +19,6 @@ const FormTextArea: FC<IFormInput> = ({ label, value, placeholder, onChangeHandl
       initialValue={placeholder}
       value={value}
       init={{
-        height: 400,
-        menubar: true,
         plugins: [
           'autolink',
           'lists',

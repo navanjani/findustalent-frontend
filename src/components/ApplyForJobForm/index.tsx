@@ -1,11 +1,17 @@
 import React, { FC, FormEvent, useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
+import axios from 'axios';
 import FormInputWithLabel from '../FormInputWithLabel';
 import FormTextArea from '../FormTextArea';
-import { UPLOADCARE_KEY } from '../../config/constants';
+import { apiUrl, UPLOADCARE_KEY } from '../../config/constants';
+import { IJobCandidate } from '../../types/jobCandidate';
 
-const ApplyForJobForm: FC = () => {
-  const initialFormData = {
+interface IApplyforJobForm {
+  companySlug: string;
+  jobSlug: string;
+}
+const ApplyForJobForm: FC<IApplyforJobForm> = ({ companySlug, jobSlug }: IApplyforJobForm) => {
+  const initialFormData: IJobCandidate = {
     firstName: '',
     lastName: '',
     email: '',
@@ -16,10 +22,21 @@ const ApplyForJobForm: FC = () => {
   };
   const [fileUploading, setFileUploading] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
-
+  const applyJob = async (application: IJobCandidate) => {
+    try {
+      const response = await axios.post(
+        `${apiUrl}/companies/${companySlug}/jobs/${jobSlug}/apply`,
+        application,
+      );
+      console.log(response);
+    } catch (e: any) {
+      console.log(e.message);
+    }
+  };
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormData(initialFormData);
+    applyJob(formData);
+    // setFormData(initialFormData);
   };
   return (
     <div className="pxp-dashboard-content-details">
@@ -44,6 +61,7 @@ const ApplyForJobForm: FC = () => {
                     file.done(() => setFileUploading(false));
                   }
                 }}
+                value={formData.cv}
                 onChange={(info) => {
                   // @ts-ignore
                   setFormData({ ...formData, cv: info.uuid });
@@ -93,6 +111,17 @@ const ApplyForJobForm: FC = () => {
                 value={formData.phoneNumber}
                 label="Phone Number"
                 placeholder="Your phone number"
+                type="text"
+              />
+            </div>
+          </div>
+          <div className="col-xxl-8">
+            <div className="mb-3">
+              <FormInputWithLabel
+                onChangeHandler={(e) => setFormData({ ...formData, linkedinUrl: e.target.value })}
+                value={formData.linkedinUrl}
+                label="Linkedin"
+                placeholder="Your linkedin Url"
                 type="text"
               />
             </div>

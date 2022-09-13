@@ -6,12 +6,14 @@ import { IJob } from '../../types/jobs';
 import { selectCategoriesAsObject, selectEmploymentTypesAsObject } from '../../store/jobs/selectors';
 import { ICategoryMap } from '../../types/categories';
 import { IEmploymentTypeMap } from '../../types/employmentTypes';
+import { selectUserCompany } from '../../store/company/selectors';
 
 interface IDashboardJobRow {
   job: IJob;
 }
 
 const DashboardJobRow: FC<IDashboardJobRow> = ({ job }: IDashboardJobRow) => {
+  const company = useSelector(selectUserCompany);
   const categories: ICategoryMap = useSelector(selectCategoriesAsObject);
   const employmentTypes: IEmploymentTypeMap = useSelector(selectEmploymentTypesAsObject);
 
@@ -57,9 +59,11 @@ const DashboardJobRow: FC<IDashboardJobRow> = ({ job }: IDashboardJobRow) => {
               </button>
             </li>
             <li>
-              <button type="button" title="Preview">
-                <span className="fa fa-eye" />
-              </button>
+              <Link to={`/c/${company?.slug}/${job?.slug}`}>
+                <button type="button" title="Preview">
+                  <span className="fa fa-eye" />
+                </button>
+              </Link>
             </li>
             <li>
               <button type="button" title="Delete">
