@@ -10,8 +10,12 @@ import logoImage from '../../theme/images/company-logo-1.png';
 import { selectUser } from '../../store/user/selectors';
 import { useAppDispatch } from '../../store';
 import { logOut } from '../../store/user/slice';
+import { IJobCandidate } from '../../types/jobCandidates';
 
-const DashboardNav: FC = () => {
+interface IDashoardNav {
+  candidates: IJobCandidate[];
+}
+const DashboardNav: FC<IDashoardNav> = ({ candidates }: IDashoardNav) => {
   const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
   const navigate = useNavigate();
@@ -26,7 +30,7 @@ const DashboardNav: FC = () => {
       <div className="dropdown pxp-user-nav-dropdown pxp-user-notifications">
         <span role="button" className="dropdown-toggle" data-bs-toggle="dropdown">
           <span className="fa fa-bell-o" />
-          <div className="pxp-user-notifications-counter">5</div>
+          <div className="pxp-user-notifications-counter">{candidates.length}</div>
         </span>
         <ul className="dropdown-menu dropdown-menu-end">
           <li>

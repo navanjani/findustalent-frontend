@@ -8,15 +8,17 @@ import DashboardRecentCandidates from '../../components/DashboardRecentCandidate
 import DashboardRecruiter from '../../components/DashboardRecruiter';
 import { useAppDispatch } from '../../store';
 
-import { selectCompanyJobs } from '../../store/company/selectors';
-import { fetchCompanyJobs } from '../../store/company/thunks';
+import { selectCompanyCandidates, selectCompanyJobs } from '../../store/company/selectors';
+import { fetchCompanyCandidates, fetchCompanyJobs } from '../../store/company/thunks';
 
 const RecruiterDashboardPage: FC = () => {
   const dispatch = useAppDispatch();
   const jobs = useSelector(selectCompanyJobs);
+  const candidates = useSelector(selectCompanyCandidates);
 
   useEffect(() => {
     dispatch(fetchCompanyJobs());
+    dispatch(fetchCompanyCandidates());
   }, [dispatch]);
   return (
     <DashboardRecruiter>
@@ -29,17 +31,17 @@ const RecruiterDashboardPage: FC = () => {
           <StatJobPosted jobs={jobs} />
         </div>
         <div className="col-sm-6 col-xxl-4">
-          <StatApplications />
+          <StatApplications candidates={candidates} />
         </div>
         {/* <div className="col-sm-6 col-xxl-3"> */}
         {/*  <StatUnreadMessages /> */}
         {/* </div> */}
         <div className="col-sm-6 col-xxl-4">
-          <StatNotifications />
+          <StatNotifications candidates={candidates} />
         </div>
       </div>
-      <DashboardNotificationList />
-      <DashboardRecentCandidates />
+      <DashboardNotificationList candidates={candidates} />
+      <DashboardRecentCandidates candidates={candidates} />
     </DashboardRecruiter>
   );
 };

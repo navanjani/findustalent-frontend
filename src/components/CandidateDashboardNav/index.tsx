@@ -5,7 +5,6 @@ import { selectUser } from '../../store/user/selectors';
 import candidateImage from '../../theme/images/ph-small.jpg';
 import { logOut } from '../../store/user/slice';
 import { useAppDispatch } from '../../store';
-
 import { DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE, DASHBOARD_HOME_ROUTE } from '../../config/routes';
 
 const CandidateDashboardNav: FC = () => {
@@ -14,6 +13,7 @@ const CandidateDashboardNav: FC = () => {
   const navigate = useNavigate();
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const toggleProfileDropdown = () => setShowProfileDropdown(!showProfileDropdown);
+
   return (
     <nav className="pxp-user-nav pxp-on-light">
       <div className="dropdown pxp-user-nav-dropdown pxp-user-notifications">
