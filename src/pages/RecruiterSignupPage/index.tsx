@@ -11,10 +11,7 @@ const RecruiterSignupPage: FC = () => {
     lastName: '',
     email: '',
     phoneNumber: '',
-    profilePicture: '',
-    location: '',
     password: '',
-    rePassword: '',
   };
   const [formData, setFormData] = useState(initialFormData);
 
@@ -91,57 +88,17 @@ const RecruiterSignupPage: FC = () => {
                         </div>
                       </div>
                     </div>
+
                     <div className="row">
                       <div className="col">
                         <div className="form-floating mb-3">
                           <FormInput
-                            type="text"
-                            label="Location"
-                            icon="fa-light fa-compass"
-                            value={formData.location}
-                            onChangeHandler={(e) => {
-                              setFormData({ ...formData, location: e.target.value });
-                            }}
-                          />
-                        </div>
-                      </div>
-                      <div className="col">
-                        <div className="form-floating mb-3">
-                          <FormInput
                             type="password"
-                            label="Password"
+                            label=" Password"
                             icon="fa-lock"
                             value={formData.password}
                             onChangeHandler={(e) => {
                               setFormData({ ...formData, password: e.target.value });
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col">
-                        <div className="form-floating mb-3">
-                          <FormInput
-                            type="text"
-                            label="Profile Picture"
-                            icon=" fa-light fa-user"
-                            value={formData.profilePicture}
-                            onChangeHandler={(e) => {
-                              setFormData({ ...formData, profilePicture: e.target.value });
-                            }}
-                          />
-                        </div>
-                      </div>
-                      <div className="col">
-                        <div className="form-floating mb-3">
-                          <FormInput
-                            type="password"
-                            label=" Re-enter Password"
-                            icon="fa-lock"
-                            value={formData.rePassword}
-                            onChangeHandler={(e) => {
-                              setFormData({ ...formData, rePassword: e.target.value });
                             }}
                           />
                         </div>
