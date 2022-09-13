@@ -10,4 +10,5 @@ export interface IJobCandidate {
   phoneNumber: string;
   coverLetter: string;
   job?: IJob;
+  createdAt?: string;
 }

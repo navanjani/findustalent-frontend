@@ -16,29 +16,101 @@ const CandidateSignupPage: FC = () => (
         <div className="col-xl-6 pxp-column pxp-is-light">
           <div className="pxp-sign-hero-form pb-100 pt-100">
             <div className="row justify-content-center">
-              <div className="col-lg-6 col-xl-7 col-xxl-5">
+              <div className="col-lg-6 col-xl-7 col-xxl-9">
                 <div className="pxp-sign-hero-form-content">
                   <h5 className="text-center">Sign Up</h5>
                   <form className="mt-4">
-                    <div className="form-floating mb-3">
-                      <FormInput
-                        type="text"
-                        label="Email Address"
-                        icon="fa-envelope-o"
-                        onChangeHandler={(e) => {
-                          console.log(e);
-                        }}
-                      />
+                    <div className="row">
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="text"
+                            label="First Name"
+                            icon="fa-envelope-o"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="password"
+                            label="Last Name"
+                            icon="fa-lock"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="form-floating mb-3">
-                      <FormInput
-                        type="password"
-                        label="Password"
-                        icon="fa-lock"
-                        onChangeHandler={(e) => {
-                          console.log(e);
-                        }}
-                      />
+                    <div className="row">
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="text"
+                            label="Email Address"
+                            icon="fa-envelope-o"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="password"
+                            label="Password"
+                            icon="fa-lock"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="text"
+                            label="Email Address"
+                            icon="fa-envelope-o"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="password"
+                            label="Password"
+                            icon="fa-lock"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <div className="form-floating mb-3">
+                          <FormInput
+                            type="text"
+                            label="Email Address"
+                            icon="fa-envelope-o"
+                            onChangeHandler={(e) => {
+                              console.log(e);
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
                     <button className="btn rounded-pill pxp-sign-hero-form-cta btn-full-width" type="submit">
                       Continue
