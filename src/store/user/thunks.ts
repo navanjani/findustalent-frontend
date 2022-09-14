@@ -14,6 +14,7 @@ export const signUp = (user: IProfile) => async (dispatch: AppDispatch) => {
   try {
     const response = await axios.post(`${apiUrl}/auth/signup`, user);
     dispatch(loginSuccess({ token: response.data.token, user: response.data.user }));
+    dispatch(setCompany({ company: response.data.company }));
     dispatch(showMessageWithTimeout('success', true, 'account created'));
     dispatch(appDoneLoading());
   } catch (error: any) {

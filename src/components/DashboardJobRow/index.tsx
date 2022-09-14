@@ -32,10 +32,14 @@ const DashboardJobRow: FC<IDashboardJobRow> = ({ job }: IDashboardJobRow) => {
         </Link>
       </td>
       <td>
-        <div className="pxp-company-dashboard-job-category">{categories[job.categoryId].name}</div>
+        <div className="pxp-company-dashboard-job-category">
+          {categories && categories[job.categoryId].name}
+        </div>
       </td>
       <td>
-        <div className="pxp-company-dashboard-job-type">{employmentTypes[job.employmentType].type}</div>
+        <div className="pxp-company-dashboard-job-type">
+          {employmentTypes && employmentTypes[job.employmentType].type}
+        </div>
       </td>
       <td>
         <button type="button" className="pxp-company-dashboard-job-applications">

@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { AppDispatch, RootState } from '../index';
 import { appDoneLoading, appLoading } from '../appState/slice';
-import { setCandidates, setDepartments, setJobs } from './slice';
+import { setCandidates, setCompany, setDepartments, setIndustries, setJobs } from './slice';
 import { apiError } from '../../helpers/apiError';
 import { IJob } from '../../types/jobs';
 import { apiUrl } from '../../config/constants';
+import { ICreateCompany } from '../../types/companies';
 
 export const fetchCompanyDepartments = () => async (dispatch: AppDispatch, getState: () => RootState) => {
   dispatch(appLoading());
@@ -70,3 +71,31 @@ export const fetchCompanyCandidates = () => async (dispatch: AppDispatch, getSta
     dispatch(appDoneLoading());
   }
 };
+export const fetchIndustries = () => async (dispatch: AppDispatch) => {
+  dispatch(appLoading());
+  try {
+    const response = await axios.get(`${apiUrl}/companies/industries`);
+    dispatch(setIndustries(response.data.industries));
+  } catch (error: any) {
+    apiError(dispatch, error);
+    dispatch(appDoneLoading());
+  }
+};
+
+export const createCompany =
+  (newCompany: ICreateCompany) => async (dispatch: AppDispatch, getState: () => RootState) => {
+    dispatch(appLoading());
+    try {
+      const { token } = getState().user;
+      const response = await axios.post(`${apiUrl}/companies`, newCompany, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      dispatch(setCompany(response.data.company));
+      dispatch(appDoneLoading());
+    } catch (error: any) {
+      apiError(dispatch, error);
+      dispatch(appDoneLoading());
+    }
+  };

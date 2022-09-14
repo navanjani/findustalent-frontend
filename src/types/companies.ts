@@ -8,4 +8,14 @@ export interface ICompany {
   subscriptionValidTill: string;
   textColor: string;
   domain: string;
+  industry: number;
+  location: string;
+}
+
+export interface ICreateCompany {
+  name: string;
+  primaryColor: string;
+  textColor: string;
+  industry: number;
+  location: string;
 }

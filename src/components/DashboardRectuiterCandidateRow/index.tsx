@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import candidateImage from '../../theme/images/ph-small.jpg';
 import { IJobCandidate } from '../../types/jobCandidates';
 
-interface IRectuiterDashboardCandidateRow {
+interface IRecruiterDashboardCandidateRow {
   candidate: IJobCandidate;
 }
-const RectuiterDashboardCandidateRow: FC<IRectuiterDashboardCandidateRow> = ({
+const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
   candidate,
-}: IRectuiterDashboardCandidateRow) => (
+}: IRecruiterDashboardCandidateRow) => (
   <tr>
     <td>
       <input type="checkbox" className="form-check-input" />
@@ -21,15 +21,13 @@ const RectuiterDashboardCandidateRow: FC<IRectuiterDashboardCandidateRow> = ({
     </td>
     <td>
       <Link to="/">
-        <td>
-          <div className="pxp-company-dashboard-job-title">
-            {candidate.firstName} {candidate.lastName}
-          </div>
-          <div className="pxp-company-dashboard-job-location">
-            <span className="fa fa-globe me-1" />
-            {candidate.job?.location}
-          </div>
-        </td>
+        <div className="pxp-company-dashboard-job-title">
+          {candidate.firstName} {candidate.lastName}
+        </div>
+        <div className="pxp-company-dashboard-job-location">
+          <span className="fa fa-globe me-1" />
+          {candidate.job?.location}
+        </div>
       </Link>
     </td>
     <td>
@@ -76,4 +74,4 @@ const RectuiterDashboardCandidateRow: FC<IRectuiterDashboardCandidateRow> = ({
     </td>
   </tr>
 );
-export default RectuiterDashboardCandidateRow;
+export default RecruiterDashboardCandidateRow;

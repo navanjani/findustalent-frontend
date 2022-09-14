@@ -10,16 +10,19 @@ import { useAppDispatch } from '../../store';
 
 import { selectCompanyCandidates, selectCompanyJobs } from '../../store/company/selectors';
 import { fetchCompanyCandidates, fetchCompanyJobs } from '../../store/company/thunks';
+import { selectUser } from '../../store/user/selectors';
 
 const RecruiterDashboardPage: FC = () => {
   const dispatch = useAppDispatch();
   const jobs = useSelector(selectCompanyJobs);
   const candidates = useSelector(selectCompanyCandidates);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     dispatch(fetchCompanyJobs());
     dispatch(fetchCompanyCandidates());
-  }, [dispatch]);
+  }, [dispatch, user]);
+
   return (
     <DashboardRecruiter>
       <div>
@@ -41,7 +44,7 @@ const RecruiterDashboardPage: FC = () => {
         </div>
       </div>
       <DashboardNotificationList candidates={candidates} />
-      <DashboardRecentCandidates candidates={candidates} />
+      {candidates && <DashboardRecentCandidates candidates={candidates} />}
     </DashboardRecruiter>
   );
 };

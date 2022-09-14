@@ -13,7 +13,7 @@ const DashboardRecentCandidates: FC<IDashboardRecentCandidates> = ({
     <div className="table-responsive">
       <table className="table align-middle">
         <tbody>
-          {candidates.length &&
+          {candidates.length > 0 &&
             candidates.map((candidate) => (
               <DashboardRecentCandidateRow key={candidate.id} candidate={candidate} />
             ))}

@@ -105,16 +105,11 @@
         "code": 110
       }
     ],
-    "react/jsx-one-expression-per-line": [
-      1,
-      {
-        "allow": "single-child"
-      }
-    ],
     "indent": "off",
     "@typescript-eslint/indent": "off",
     "operator-linebreak": "off",
     "import/prefer-default-export": "off",
-    "implicit-arrow-linebreak": "off"
+    "implicit-arrow-linebreak": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

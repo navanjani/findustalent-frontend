@@ -8,13 +8,13 @@ export const selectCategories = (reduxState: RootState) => reduxState.jobs.categ
 
 // https://stackoverflow.com/a/37642350
 export const selectCategoriesAsObject: any = (reduxState: RootState) =>
-  _.keyBy(reduxState.jobs.categories, 'id');
+  reduxState.jobs.categories.length ? _.keyBy(reduxState.jobs.categories, 'id') : null;
 /* eslint no-confusing-arrow:0 */
 export const selectEmploymentTypesAsObject: any = (reduxState: RootState) =>
-  reduxState.jobs.employmentTypes ? _.keyBy(reduxState.jobs.employmentTypes, 'id') : null;
+  reduxState.jobs.employmentTypes.length ? _.keyBy(reduxState.jobs.employmentTypes, 'id') : null;
 
 export const selectCareerLevelsAsObject: any = (reduxState: RootState) =>
-  reduxState.jobs.careerLevels ? _.keyBy(reduxState.jobs.careerLevels, 'id') : null;
+  reduxState.jobs.careerLevels.length ? _.keyBy(reduxState.jobs.careerLevels, 'id') : null;
 
 export const selectSalaryRangesAsObject: any = (reduxState: RootState) =>
-  reduxState.jobs.salaryRanges ? _.keyBy(reduxState.jobs.salaryRanges, 'id') : null;
+  reduxState.jobs.salaryRanges.length ? _.keyBy(reduxState.jobs.salaryRanges, 'id') : null;

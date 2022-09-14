@@ -6,14 +6,22 @@ import { fetchCompanyJobs } from '../../store/company/thunks';
 import DashboardRecruiter from '../../components/DashboardRecruiter';
 import DashboardJobRow from '../../components/DashboardJobRow';
 import { selectCompanyJobs } from '../../store/company/selectors';
+import { selectUser } from '../../store/user/selectors';
+import { fetchCategories, fetchEmploymentTypes } from '../../store/jobs/thunks';
 
 const RecruiterManageJobPage: FC = () => {
   const dispatch = useAppDispatch();
   const jobs = useSelector(selectCompanyJobs);
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    dispatch(fetchEmploymentTypes());
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchCompanyJobs());
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   return (
     <DashboardRecruiter>

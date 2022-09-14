@@ -1,12 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import DashboardRecruiter from '../../components/DashboardRecruiter';
 
 import { selectCompanyCandidates } from '../../store/company/selectors';
-import RectuiterDashboardCandidateRow from '../../components/RectuiterDashboardCandidateRow';
+import RecruiterDashboardCandidateRow from '../../components/DashboardRectuiterCandidateRow';
+import { useAppDispatch } from '../../store';
+import { fetchCompanyCandidates } from '../../store/company/thunks';
+import { selectUser } from '../../store/user/selectors';
 
 const RecruiterCandidatePage: FC = () => {
+  const dispatch = useAppDispatch();
   const candidates = useSelector(selectCompanyCandidates);
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    dispatch(fetchCompanyCandidates());
+  }, [dispatch, user]);
+
   return (
     <DashboardRecruiter>
       <h1>Candidates</h1>
@@ -65,7 +75,7 @@ const RecruiterCandidatePage: FC = () => {
             <tbody>
               {candidates &&
                 candidates.map((candidate) => (
-                  <RectuiterDashboardCandidateRow key={candidate.id} candidate={candidate} />
+                  <RecruiterDashboardCandidateRow key={candidate.id} candidate={candidate} />
                 ))}
             </tbody>
           </table>

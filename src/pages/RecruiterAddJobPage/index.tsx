@@ -1,11 +1,11 @@
-import React, { FC, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../store';
 import DashboardRecruiter from '../../components/DashboardRecruiter';
 import FormInputWithLabel from '../../components/FormInputWithLabel';
 import FormSelect from '../../components/FormSelect';
 import FormTextArea from '../../components/FormTextArea';
-import { createNewJob } from '../../store/company/thunks';
+import { createNewJob, fetchCompanyDepartments } from '../../store/company/thunks';
 import { selectDepartments } from '../../store/company/selectors';
 import FormDatePicker from '../../components/FormDatePicker';
 import {
@@ -15,6 +15,13 @@ import {
   selectSalaryRanges,
 } from '../../store/jobs/selectors';
 import { IJob } from '../../types/jobs';
+import {
+  fetchCareerLevels,
+  fetchCategories,
+  fetchEmploymentTypes,
+  fetchSalaryRanges,
+} from '../../store/jobs/thunks';
+import { selectUser } from '../../store/user/selectors';
 
 const RecruiterDashboardPage: FC = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +30,7 @@ const RecruiterDashboardPage: FC = () => {
   const departments = useSelector(selectDepartments);
   const salaryRanges = useSelector(selectSalaryRanges);
   const categories = useSelector(selectCategories);
+  const user = useSelector(selectUser);
 
   const descriptionPlaceholder = String(
     '<h4>Overview</h4>\n' +
@@ -47,8 +55,6 @@ const RecruiterDashboardPage: FC = () => {
       '</div>',
   );
 
-  // const user = useSelector(selectUser);
-
   const initialFormData: IJob = {
     title: '',
     categoryId: 0,
@@ -69,7 +75,16 @@ const RecruiterDashboardPage: FC = () => {
     setFormData(initialFormData);
   };
 
-  console.log(formData);
+  useEffect(() => {
+    dispatch(fetchEmploymentTypes());
+    dispatch(fetchSalaryRanges());
+    dispatch(fetchCategories());
+    dispatch(fetchCareerLevels());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchCompanyDepartments());
+  }, [user, dispatch]);
 
   return (
     <DashboardRecruiter>
