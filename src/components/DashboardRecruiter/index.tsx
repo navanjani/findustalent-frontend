@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import DashboardLeftNav from '../DashboardLeftNav';
 import DashboardLeftFooter from '../DashboardLeftFooter';
 import DashboardMobileNav from '../DashboardMobileNav';
@@ -18,9 +19,21 @@ import {
 import { fetchCompanyCandidates, fetchCompanyDepartments } from '../../store/company/thunks';
 
 import { selectCompanyCandidates } from '../../store/company/selectors';
+import { selectToken, selectUser } from '../../store/user/selectors';
+import { COMPANY_REGISTER_ROUTE } from '../../config/routes';
 
 const DashboardRecruiter: FC<IComponentWithChildren> = ({ children }) => {
   const dispatch = useAppDispatch();
+  const user = useSelector(selectUser);
+  const token = useSelector(selectToken);
+  const navigate = useNavigate();
+
+  // Recruiter must have a company registered to go to the dashboard
+  useEffect(() => {
+    if (token !== null && user && user.userType === 2 && user.companyId === null) {
+      navigate(COMPANY_REGISTER_ROUTE);
+    }
+  }, [user, token]);
 
   useEffect(() => {
     dispatch(fetchEmploymentTypes());

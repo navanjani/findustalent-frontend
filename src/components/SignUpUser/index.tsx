@@ -16,6 +16,7 @@ const SignUpUser: FC<ISignUpUser> = ({ userType }: ISignUpUser) => {
     email: '',
     phoneNumber: '',
     password: '',
+    userType,
   };
 
   const [formData, setFormData] = useState(initialFormData);

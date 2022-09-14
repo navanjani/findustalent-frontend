@@ -2,19 +2,22 @@ import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import signupImageRecruiter from '../../theme/images/customer-2.png';
-import { DASHBOARD_HOME_ROUTE } from '../../config/routes';
-import { selectToken } from '../../store/user/selectors';
+import { COMPANY_REGISTER_ROUTE, DASHBOARD_HOME_ROUTE } from '../../config/routes';
+import { selectToken, selectUser } from '../../store/user/selectors';
 import SignUpUser from '../../components/SignUpUser';
 
 const RecruiterSignupPage: FC = () => {
   const token = useSelector(selectToken);
+  const user = useSelector(selectUser);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (token !== null) {
+    if (token !== null && user && user.userType === 2 && user.companyId === null) {
+      navigate(COMPANY_REGISTER_ROUTE);
+    } else if (token !== null) {
       navigate(DASHBOARD_HOME_ROUTE);
     }
-  }, [token, navigate]);
+  }, [token, navigate, user]);
 
   return (
     <section className="pxp-hero vh-100" style={{ backgroundColor: 'var(--pxpMainColorLight)' }}>
