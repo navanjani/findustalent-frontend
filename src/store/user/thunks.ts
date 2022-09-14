@@ -7,26 +7,20 @@ import { loginSuccess, logOut, tokenStillValid } from './slice';
 import { AppDispatch, RootState } from '../index';
 import { apiError } from '../../helpers/apiError';
 import { setCompany } from '../company/slice';
+import { IProfile } from '../../types/profile';
 
-export const signUp =
-  (firstName: string, lastName: string, email: string, password: string) => async (dispatch: AppDispatch) => {
-    dispatch(appLoading());
-    try {
-      const response = await axios.post(`${apiUrl}/auth/signup`, {
-        firstName,
-        lastName,
-        email,
-        password,
-      });
-
-      dispatch(loginSuccess({ token: response.data.token, user: response.data.user }));
-      dispatch(showMessageWithTimeout('success', true, 'account created'));
-      dispatch(appDoneLoading());
-    } catch (error: any) {
-      apiError(dispatch, error);
-      dispatch(appDoneLoading());
-    }
-  };
+export const signUp = (user: IProfile) => async (dispatch: AppDispatch) => {
+  dispatch(appLoading());
+  try {
+    const response = await axios.post(`${apiUrl}/auth/signup`, user);
+    dispatch(loginSuccess({ token: response.data.token, user: response.data.user }));
+    dispatch(showMessageWithTimeout('success', true, 'account created'));
+    dispatch(appDoneLoading());
+  } catch (error: any) {
+    apiError(dispatch, error);
+    dispatch(appDoneLoading());
+  }
+};
 
 export const login = (email: string, password: string) => async (dispatch: AppDispatch) => {
   dispatch(appLoading());

@@ -1,11 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-interface IProfile {
-  userType: number;
-  firstName: string;
-  lastName: string;
-  companyId: number;
-}
+import { IProfile } from '../../types/profile';
 
 interface IUser {
   token: string | null;
