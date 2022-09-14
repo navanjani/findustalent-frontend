@@ -18,3 +18,4 @@ export const DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE = '/dashboard/recruiter/sub
 export const CONTACT_US_ROUTE = '/contact-us';
 export const DYNAMIC_JOB_DETAILS_ROUTE = '/c/:companySlug/:jobSlug';
 export const COMPANY_REGISTER_ROUTE = '/recruiter/register-company';
+export const PRICING_PAGE_ROUTE = '/pricing';

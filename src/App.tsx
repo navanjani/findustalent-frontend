@@ -22,6 +22,7 @@ import {
   CONTACT_US_ROUTE,
   DYNAMIC_JOB_DETAILS_ROUTE,
   COMPANY_REGISTER_ROUTE,
+  PRICING_PAGE_ROUTE,
 } from './config/routes';
 import HomePage from './pages/HomePage';
 import './App.scss';
@@ -47,6 +48,7 @@ import RecruiterDashboardSubscriptionsPage from './pages/RecruiterDashboardSubsc
 import ContactUsPage from './pages/ContactUsPage';
 import JobDetailPage from './pages/JobDetailPage';
 import RegisterCompanyPage from './pages/RegisterCompanyPage';
+import PricingPage from './pages/PricingPage';
 
 function App() {
   const showClientNavBar = useSelector(selectShowClientNavBar);
@@ -90,6 +92,7 @@ function App() {
         />
         <Route path={DYNAMIC_JOB_DETAILS_ROUTE} element={<JobDetailPage />} />
         <Route path={COMPANY_REGISTER_ROUTE} element={<RegisterCompanyPage />} />
+        <Route path={PRICING_PAGE_ROUTE} element={<PricingPage />} />
       </Routes>
 
       {showClientNavBar && <ClientFooter />}

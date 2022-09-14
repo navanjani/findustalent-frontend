@@ -5,6 +5,7 @@ import {
   DASHBOARD_ADD_JOB_ROUTE,
   DASHBOARD_HOME_ROUTE,
   HOME_PAGE_ROUTE,
+  PRICING_PAGE_ROUTE,
   SIGNIN_PAGE_ROUTE,
 } from '../../config/routes';
 import ClientNavbarMobile from '../ClientNavbarMobile';
@@ -60,7 +61,7 @@ const ClientNavbar: FC = () => {
                 <NavLink to={HOME_PAGE_ROUTE}>Product</NavLink>
               </li>
               <li className="dropdown">
-                <NavLink to={HOME_PAGE_ROUTE}>Pricing</NavLink>
+                <NavLink to={PRICING_PAGE_ROUTE}>Pricing</NavLink>
               </li>
               <li className="dropdown">
                 <NavLink to={HOME_PAGE_ROUTE}>Candidate</NavLink>

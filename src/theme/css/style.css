@@ -149,7 +149,7 @@ a:hover {
 
 .pxp-animate-in.pxp-animate-in-top {
     transform: translateY(20px);
-    opacity: 0;
+    opacity: 1;
     transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-property: transform, opacity;
 }
