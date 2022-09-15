@@ -14,6 +14,7 @@ const DashboardLeftFooter: FC = () => {
               className="pxp-dashboard-side-user-nav-avatar pxp-cover"
               style={{ backgroundImage: `url(${logoImage})` }}
             />
+
             <div className="pxp-dashboard-side-user-nav-name">{userCompany?.name}</div>
           </span>
           <ul className="dropdown-menu">

@@ -1,8 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { Link } from 'react-router-dom';
 import './style.scss';
 import banner from '../../theme/images/hero-illustration.png';
 import { animationClasses } from '../../config/animations';
+import ButtonFullWidth from '../ButtonFullWidth';
+import { SIGNUP_PAGE_ROUTE } from '../../config/routes';
 
 const HomeHero: FC = () => {
   // https://reactcommunity.org/react-transition-group/css-transition
@@ -23,50 +26,15 @@ const HomeHero: FC = () => {
               <h1>
                 Find the perfect
                 <br />
-                <span style={{ color: 'var(--pxpMainColor)' }}>job</span>
-                for you
+                <span style={{ color: 'var(--pxpMainColor)' }}>talent</span> for your job openings
               </h1>
               <div className="pxp-hero-subtitle mt-3 mt-lg-4">
-                Search your career opportunity through
-                <strong>12,800</strong>
-                jobs
+                Create your own <strong>customized</strong> career page
               </div>
-
-              <div className="pxp-hero-form pxp-hero-form-round mt-3 mt-lg-4">
-                <form className="row gx-3 align-items-center" action="jobs-list-1.html">
-                  <div className="col-12 col-sm">
-                    <div className="mb-3 mb-sm-0">
-                      <input type="text" className="form-control" placeholder="Job Title or Keyword" />
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm pxp-has-left-border">
-                    <div className="mb-3 mb-sm-0">
-                      <input type="text" className="form-control" placeholder="Location" />
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-auto">
-                    <button type="submit">
-                      <span className="fa fa-search" />
-                    </button>
-                  </div>
-                </form>
-              </div>
-
-              <div className="pxp-hero-searches-container">
-                <div className="pxp-hero-searches-label">Popular Searches</div>
-                <div className="pxp-hero-searches">
-                  <div className="pxp-hero-searches-items">
-                    <a href="jobs-list-1.html">Work from home</a>
-                    <a href="jobs-list-1.html">Part-time</a>
-                    <a href="jobs-list-1.html">Administration</a>
-                    <a href="jobs-list-1.html">Finance</a>
-                    <a href="jobs-list-1.html">Retail</a>
-                    <a href="jobs-list-1.html">IT</a>
-                    <a href="jobs-list-1.html">Engineering</a>
-                    <a href="jobs-list-1.html">Sales</a>
-                    <a href="jobs-list-1.html">Manufacturing</a>
-                  </div>
-                </div>
+              <div className="pxp-hero-subtitle mt-4 mt-lg-4">
+                <Link to={SIGNUP_PAGE_ROUTE}>
+                  <ButtonFullWidth label="Create an account" />
+                </Link>
               </div>
             </div>
             <div className="d-none d-xl-block col-xl-5 position-relative">
