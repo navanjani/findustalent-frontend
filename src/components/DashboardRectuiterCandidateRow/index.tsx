@@ -2,13 +2,18 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import candidateImage from '../../theme/images/ph-small.jpg';
 import { IJobCandidate } from '../../types/jobCandidates';
+// import { IApplicationStatuses, IApplicationStatusesMap } from '../../types/applicationStatuses';
 
 interface IRecruiterDashboardCandidateRow {
   candidate: IJobCandidate;
+  // applicationStatuses: IApplicationStatusesMap;
+  // jobCandidateStatuses: IApplicationStatuses;
 }
 const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
   candidate,
-}: IRecruiterDashboardCandidateRow) => (
+}: // applicationStatuses,
+// jobCandidateStatuses,
+IRecruiterDashboardCandidateRow) => (
   <tr>
     <td>
       <input type="checkbox" className="form-check-input" />
@@ -20,7 +25,7 @@ const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
       />
     </td>
     <td>
-      <Link to="/">
+      <Link to={`/dashboard/recruiter/jobs/${candidate.job?.id}/candidates/${candidate.id}`}>
         <div className="pxp-company-dashboard-job-title">
           {candidate.firstName} {candidate.lastName}
         </div>
@@ -35,7 +40,9 @@ const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
     </td>
     <td>
       <div className="pxp-company-dashboard-job-status">
-        <span className="badge rounded-pill bg-success">Approved</span>
+        <span className="badge rounded-pill bg-success">
+          {/*{applicationStatuses && applicationStatuses?.status}*/}
+        </span>
       </div>
     </td>
     <td>
@@ -54,21 +61,6 @@ const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
           <li>
             <button type="button" title="Send message">
               <span className="fa fa-envelope-o" />
-            </button>
-          </li>
-          <li>
-            <button type="button" title="Approve">
-              <span className="fa fa-check" />
-            </button>
-          </li>
-          <li>
-            <button type="button" title="Reject">
-              <span className="fa fa-ban" />
-            </button>
-          </li>
-          <li>
-            <button type="button" title="Delete">
-              <span className="fa fa-trash-o" />
             </button>
           </li>
         </ul>

@@ -3,12 +3,14 @@ import { ICategory } from '../../types/categories';
 import { IEmploymentType } from '../../types/employmentTypes';
 import { ISalaryRange } from '../../types/salaryRanges';
 import { ICareerLevel } from '../../types/careerLevels';
+import { IApplicationStatuses } from '../../types/applicationStatuses';
 
 interface ICompanies {
   employmentTypes: IEmploymentType[];
   careerLevels: ICareerLevel[];
   salaryRanges: ISalaryRange[];
   categories: ICategory[];
+  applicationStatuses: IApplicationStatuses[];
 }
 
 const initialState: ICompanies = {
@@ -16,6 +18,7 @@ const initialState: ICompanies = {
   careerLevels: [],
   salaryRanges: [],
   categories: [],
+  applicationStatuses: [],
 };
 export const jobsSlice = createSlice({
   name: 'jobs',
@@ -33,7 +36,11 @@ export const jobsSlice = createSlice({
     setCategories: (state, action) => {
       state.categories = action.payload;
     },
+    setApplicationStatuses: (state, action) => {
+      state.applicationStatuses = action.payload;
+    },
   },
 });
-export const { setEmploymentTypes, setCareerLevels, setSalaryRanges, setCategories } = jobsSlice.actions;
+export const { setEmploymentTypes, setCareerLevels, setSalaryRanges, setCategories, setApplicationStatuses } =
+  jobsSlice.actions;
 export default jobsSlice.reducer;

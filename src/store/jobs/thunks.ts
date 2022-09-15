@@ -3,7 +3,13 @@ import { AppDispatch } from '../index';
 import { appDoneLoading, appLoading } from '../appState/slice';
 
 import { apiUrl } from '../../config/constants';
-import { setCareerLevels, setCategories, setEmploymentTypes, setSalaryRanges } from './slice';
+import {
+  setApplicationStatuses,
+  setCareerLevels,
+  setCategories,
+  setEmploymentTypes,
+  setSalaryRanges,
+} from './slice';
 import { apiError } from '../../helpers/apiError';
 
 export const fetchEmploymentTypes = () => async (dispatch: AppDispatch) => {
@@ -45,6 +51,18 @@ export const fetchCategories = () => async (dispatch: AppDispatch) => {
   try {
     const response = await axios.get(`${apiUrl}/jobs/categories`);
     dispatch(setCategories(response.data.categories));
+  } catch (error: any) {
+    apiError(dispatch, error);
+    dispatch(appDoneLoading());
+  }
+};
+
+export const fetchApplicationStatuses = () => async (dispatch: AppDispatch) => {
+  dispatch(appLoading());
+  try {
+    const response = await axios.get(`${apiUrl}/jobs/stasuses`);
+    console.log(response.data.statuses);
+    dispatch(setApplicationStatuses(response.data.statuses));
   } catch (error: any) {
     apiError(dispatch, error);
     dispatch(appDoneLoading());

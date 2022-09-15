@@ -1,7 +1,15 @@
 import axios from 'axios';
 import { AppDispatch, RootState } from '../index';
 import { appDoneLoading, appLoading } from '../appState/slice';
-import { setCandidates, setCompany, setDepartments, setIndustries, setJobs, setCandidate } from './slice';
+import {
+  setCandidates,
+  setCompany,
+  setDepartments,
+  setIndustries,
+  setJobs,
+  setCandidate,
+  setJobCandidateStatuses,
+} from './slice';
 import { apiError } from '../../helpers/apiError';
 import { IJob } from '../../types/jobs';
 import { apiUrl } from '../../config/constants';
@@ -111,6 +119,7 @@ export const fetchCandidate =
         },
       });
       dispatch(setCandidate(response.data.candidate));
+      dispatch(setJobCandidateStatuses(response.data.jobCandidateStatuses));
     } catch (e) {
       apiError(dispatch, e);
       dispatch(appDoneLoading());

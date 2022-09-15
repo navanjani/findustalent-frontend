@@ -18,3 +18,6 @@ export const selectCareerLevelsAsObject: any = (reduxState: RootState) =>
 
 export const selectSalaryRangesAsObject: any = (reduxState: RootState) =>
   reduxState.jobs.salaryRanges.length ? _.keyBy(reduxState.jobs.salaryRanges, 'id') : null;
+
+export const selectApplicationStatusesAsObject: any = (reduxState: RootState) =>
+  reduxState.jobs.applicationStatuses.length ? _.keyBy(reduxState.jobs.applicationStatuses, 'id') : null;

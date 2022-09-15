@@ -7,14 +7,22 @@ import RecruiterDashboardCandidateRow from '../../components/DashboardRectuiterC
 import { useAppDispatch } from '../../store';
 import { fetchCompanyCandidates } from '../../store/company/thunks';
 import { selectUser } from '../../store/user/selectors';
+import DashboardPagination from '../../components/DashboardPagination';
+import { fetchApplicationStatuses } from '../../store/jobs/thunks';
+// import { selectApplicationStatusesAsObject } from '../../store/jobs/selectors';
+// import { IApplicationStatusesMap } from '../../types/applicationStatuses';
+// import { IJobCandidateStatuses } from '../../types/jobCandidateStatuses';
 
 const RecruiterCandidatePage: FC = () => {
   const dispatch = useAppDispatch();
   const candidates = useSelector(selectCompanyCandidates);
+  // const jobCandidateStatuses: IJobCandidateStatuses = useSelector(selectJobCandidateStatuses);
+  // const applicationStatuses: IApplicationStatusesMap = useSelector(selectApplicationStatusesAsObject);
   const user = useSelector(selectUser);
 
   useEffect(() => {
     dispatch(fetchCompanyCandidates());
+    dispatch(fetchApplicationStatuses());
   }, [dispatch, user]);
 
   return (
@@ -24,19 +32,6 @@ const RecruiterCandidatePage: FC = () => {
 
       <div className="mt-4 mt-lg-5">
         <div className="row justify-content-between align-content-center">
-          <div className="col-auto order-2 order-sm-1">
-            <div className="pxp-company-dashboard-jobs-bulk-actions mb-3">
-              <select className="form-select">
-                <option>Bulk actions</option>
-                <option>Approve</option>
-                <option>Reject</option>
-                <option>Delete</option>
-              </select>
-              <button type="button" className="btn ms-2">
-                Apply
-              </button>
-            </div>
-          </div>
           <div className="col-auto order-1 order-sm-2">
             <div className="pxp-company-dashboard-jobs-search mb-3">
               <div className="pxp-company-dashboard-jobs-search-results me-3">
@@ -75,38 +70,16 @@ const RecruiterCandidatePage: FC = () => {
             <tbody>
               {candidates &&
                 candidates.map((candidate) => (
-                  <RecruiterDashboardCandidateRow key={candidate.id} candidate={candidate} />
+                  <RecruiterDashboardCandidateRow
+                    key={candidate.id}
+                    candidate={candidate}
+                    // applicationStatuses={applicationStatuses}
+                    // jobCandidateStatuses={jobCandidateStatuses}
+                  />
                 ))}
             </tbody>
           </table>
-
-          <div className="row mt-4 mt-lg-5 justify-content-between align-items-center">
-            <div className="col-auto">
-              <nav className="mt-3 mt-sm-0" aria-label="Candidates pagination">
-                <ul className="pagination pxp-pagination">
-                  <li className="page-item active" aria-current="page">
-                    <span className="page-link">1</span>
-                  </li>
-                  <li className="page-item">
-                    <button type="button" className="page-link">
-                      2
-                    </button>
-                  </li>
-                  <li className="page-item">
-                    <button type="button" className="page-link">
-                      3
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div className="col-auto">
-              <button type="button" className="btn rounded-pill pxp-section-cta mt-3 mt-sm-0">
-                Show me more
-                <span className="fa fa-angle-right" />
-              </button>
-            </div>
-          </div>
+          <DashboardPagination />
         </div>
       </div>
     </DashboardRecruiter>
