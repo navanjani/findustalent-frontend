@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-
+import { Link } from 'react-router-dom';
 import smallProfile from '../../theme/images/ph-small.jpg';
 import { IJobCandidate } from '../../types/jobCandidates';
 
@@ -35,20 +35,22 @@ const DashboardRecentCandidateRow: FC<IDashboardRecentCandidateRow> = ({
       <div className="pxp-dashboard-table-options">
         <ul className="list-unstyled">
           <li>
-            <button title="View profile" type="button">
-              <span className="fa fa-eye" />
-            </button>
+            <Link to={`/dashboard/recruiter/jobs/${candidate.job?.id}/candidates/${candidate.id}`}>
+              <button title="View profile" type="button">
+                <span className="fa fa-eye" />
+              </button>
+            </Link>
           </li>
           <li>
-            <button title="Send message" type="button">
+            <button title="Send message" type="button" disabled>
               <span className="fa fa-envelope-o" />
             </button>
           </li>
-          <li>
-            <button title="Delete" type="button">
-              <span className="fa fa-trash-o" />
-            </button>
-          </li>
+          {/*<li>*/}
+          {/*  <button title="Delete" type="button">*/}
+          {/*    <span className="fa fa-trash-o" />*/}
+          {/*  </button>*/}
+          {/*</li>*/}
         </ul>
       </div>
     </td>

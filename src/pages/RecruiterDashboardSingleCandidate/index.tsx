@@ -33,15 +33,19 @@ const RecruiterDashboardSingleCandidate: FC = () => {
         {candidate?.firstName} {candidate?.lastName}
       </h1>
       <p className="pxp-text-light">Applied for {candidate?.job?.title}</p>
-      {candidate && (
-        <div>
-          {/* https://github.com/wojtekmaj/react-pdf#usage */}
-          <Document file={getPdfUrl(candidate.cv)} onLoadSuccess={(data) => setNumPages(data.numPages)}>
-            <Page pageNumber={pageNumber} />
-          </Document>
-          Page {pageNumber} of {numPages}
+      <div className="row mt-4 mt-lg-5 align-items-center">
+        <div className="col-sm-12 col-xxl-12">
+          {candidate && (
+            <div>
+              {/* https://github.com/wojtekmaj/react-pdf#usage */}
+              <Document file={getPdfUrl(candidate.cv)} onLoadSuccess={(data) => setNumPages(data.numPages)}>
+                <Page pageNumber={pageNumber} />
+              </Document>
+              Page {pageNumber} of {numPages}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </DashboardRecruiter>
   );
 };
