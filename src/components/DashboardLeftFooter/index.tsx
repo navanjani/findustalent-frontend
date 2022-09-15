@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import logoImage from '../../theme/images/company-logo-1.png';
 import { selectUserCompany } from '../../store/company/selectors';
 
@@ -15,7 +16,9 @@ const DashboardLeftFooter: FC = () => {
               style={{ backgroundImage: `url(${logoImage})` }}
             />
 
-            <div className="pxp-dashboard-side-user-nav-name">{userCompany?.name}</div>
+            <Link to={`/c/${userCompany?.slug}`}>
+              <div className="pxp-dashboard-side-user-nav-name">{userCompany?.name}</div>
+            </Link>
           </span>
           <ul className="dropdown-menu">
             <li>
