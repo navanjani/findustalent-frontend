@@ -33,15 +33,21 @@ const JobHighlightCard: FC<IJobHighlightCard> = ({ job }: IJobHighlightCard) => 
     <div className="pxp-single-job-side-panel mt-5 mt-lg-0">
       <div className="mt-4">
         <div className="pxp-single-job-side-info-label pxp-text-light">Career Level</div>
-        <div className="pxp-single-job-side-info-data">{careerLevels[job.careerLevel]?.level}</div>
+        <div className="pxp-single-job-side-info-data">
+          {careerLevels && careerLevels[job.careerLevel]?.level}
+        </div>
       </div>
       <div className="mt-4">
         <div className="pxp-single-job-side-info-label pxp-text-light">Employment Type</div>
-        <div className="pxp-single-job-side-info-data">{employmentTypes[job.employmentType]?.type}</div>
+        <div className="pxp-single-job-side-info-data">
+          {employmentTypes && employmentTypes[job.employmentType]?.type}
+        </div>
       </div>
       <div className="mt-4">
         <div className="pxp-single-job-side-info-label pxp-text-light">Salary</div>
-        <div className="pxp-single-job-side-info-data">€{salaryRanges[job.salaryRange]?.range}</div>
+        <div className="pxp-single-job-side-info-data">
+          €{salaryRanges && salaryRanges[job.salaryRange]?.range}
+        </div>
       </div>
       <div className="mt-4">
         <div className="pxp-single-job-side-info-label pxp-text-light">Category</div>
