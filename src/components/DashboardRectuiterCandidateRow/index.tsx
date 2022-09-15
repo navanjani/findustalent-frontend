@@ -45,9 +45,11 @@ const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
       <div className="pxp-dashboard-table-options">
         <ul className="list-unstyled">
           <li>
-            <button type="button" title="View profile">
-              <span className="fa fa-eye" />
-            </button>
+            <Link to={`/dashboard/recruiter/jobs/${candidate.job?.id}/candidates/${candidate.id}`}>
+              <button type="button" title="View profile">
+                <span className="fa fa-eye" />
+              </button>
+            </Link>
           </li>
           <li>
             <button type="button" title="Send message">

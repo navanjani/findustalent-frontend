@@ -23,6 +23,7 @@ import {
   DYNAMIC_JOB_DETAILS_ROUTE,
   COMPANY_REGISTER_ROUTE,
   PRICING_PAGE_ROUTE,
+  DYNAMIC_DASHBOARD_RECRUITER_VIEW_CANDIDATE,
 } from './config/routes';
 import HomePage from './pages/HomePage';
 import './App.scss';
@@ -49,6 +50,7 @@ import ContactUsPage from './pages/ContactUsPage';
 import JobDetailPage from './pages/JobDetailPage';
 import RegisterCompanyPage from './pages/RegisterCompanyPage';
 import PricingPage from './pages/PricingPage';
+import RecruiterDashboardSingleCandidate from './pages/RecruiterDashboardSingleCandidate';
 
 function App() {
   const showClientNavBar = useSelector(selectShowClientNavBar);
@@ -66,6 +68,10 @@ function App() {
         <Route path={DASHBOARD_ADD_JOB_ROUTE} element={<RecruiterAddJobPage />} />
         <Route path={DASHBOARD_MANAGE_JOBS_ROUTE} element={<RecruiterManageJobPage />} />
         <Route path={DASHBOARD_RECRUITER_CANDIDATE_ROUTE} element={<RecruiterCandidatePage />} />
+        <Route
+          path={DYNAMIC_DASHBOARD_RECRUITER_VIEW_CANDIDATE}
+          element={<RecruiterDashboardSingleCandidate />}
+        />
         <Route
           path={DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE}
           element={<RecruiterDashboardChangePasswordPage />}

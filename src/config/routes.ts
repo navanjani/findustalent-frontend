@@ -15,6 +15,8 @@ export const DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE = '/dashboard/candidate/appl
 export const DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE = '/dashboard/candidate/change-password';
 export const DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE = '/dashboard/recruiter/change-password';
 export const DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE = '/dashboard/recruiter/subscriptions';
+export const DYNAMIC_DASHBOARD_RECRUITER_VIEW_CANDIDATE =
+  '/dashboard/recruiter/jobs/:jobId/candidates/:candidateId';
 export const CONTACT_US_ROUTE = '/contact-us';
 export const DYNAMIC_JOB_DETAILS_ROUTE = '/c/:companySlug/:jobSlug';
 export const COMPANY_REGISTER_ROUTE = '/recruiter/register-company';

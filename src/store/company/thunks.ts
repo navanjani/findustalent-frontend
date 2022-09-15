@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AppDispatch, RootState } from '../index';
 import { appDoneLoading, appLoading } from '../appState/slice';
-import { setCandidates, setCompany, setDepartments, setIndustries, setJobs } from './slice';
+import { setCandidates, setCompany, setDepartments, setIndustries, setJobs, setCandidate } from './slice';
 import { apiError } from '../../helpers/apiError';
 import { IJob } from '../../types/jobs';
 import { apiUrl } from '../../config/constants';
@@ -96,6 +96,23 @@ export const createCompany =
       dispatch(appDoneLoading());
     } catch (error: any) {
       apiError(dispatch, error);
+      dispatch(appDoneLoading());
+    }
+  };
+
+export const fetchCandidate =
+  (jobId: number, candidateId: number) => async (dispatch: AppDispatch, getState: () => RootState) => {
+    try {
+      dispatch(appLoading());
+      const { token } = getState().user;
+      const response = await axios.get(`${apiUrl}/companies/jobs/${jobId}/candidates/${candidateId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      dispatch(setCandidate(response.data.candidate));
+    } catch (e) {
+      apiError(dispatch, e);
       dispatch(appDoneLoading());
     }
   };

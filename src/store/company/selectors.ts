@@ -5,3 +5,4 @@ export const selectUserCompany = (reduxState: RootState) => reduxState.company.c
 export const selectCompanyJobs = (reduxState: RootState) => reduxState.company.jobs;
 export const selectCompanyCandidates = (reduxState: RootState) => reduxState.company.candidates;
 export const selectIndustries = (reduxState: RootState) => reduxState.company.industries;
+export const selectCandidate = (reduxState: RootState) => reduxState.company.candidate;
