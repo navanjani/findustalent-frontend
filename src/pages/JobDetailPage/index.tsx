@@ -28,7 +28,7 @@ const JobDetailPage: FC = () => {
   }, [companySlug, jobSlug]);
 
   return (
-    <PublicPage>
+    <PublicPage hasMargin>
       <section>
         <div className="pxp-container">
           <div className="pxp-single-job-content pxp-has-columns">
@@ -52,46 +52,6 @@ const JobDetailPage: FC = () => {
                   </div>
                   <div className="col-auto">
                     <div className="pxp-single-job-options mt-4 col-xl-0">
-                      <button type="button" className="btn pxp-single-job-save-btn">
-                        <span className="fa fa-heart-o" />
-                      </button>
-                      <div className="dropdown ms-2">
-                        <button
-                          className="btn pxp-single-job-share-btn dropdown-toggle"
-                          type="button"
-                          id="socialShareBtn"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <span className="fa fa-share-alt" />
-                        </button>
-                        <ul
-                          className="dropdown-menu pxp-single-job-share-dropdown"
-                          aria-labelledby="socialShareBtn"
-                        >
-                          <li>
-                            <button type="button" className="dropdown-item">
-                              <span className="fa fa-facebook" /> Facebook
-                            </button>
-                          </li>
-                          <li>
-                            <button type="button" className="dropdown-item">
-                              <span className="fa fa-twitter" /> Twitter
-                            </button>
-                          </li>
-                          <li>
-                            <button type="button" className="dropdown-item">
-                              <span className="fa fa-pinterest" /> Pinterest
-                            </button>
-                          </li>
-                          <li>
-                            <button type="button" className="dropdown-item">
-                              <span className="fa fa-linkedin" /> LinkedIn
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-
                       <button
                         type="button"
                         disabled={showApplyForm}

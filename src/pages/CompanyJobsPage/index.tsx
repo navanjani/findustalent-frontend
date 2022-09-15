@@ -31,7 +31,7 @@ const CompanyJobsPage: FC = () => {
   }, [companySlug]);
 
   return (
-    <PublicPage>
+    <PublicPage hasMargin>
       <section>
         <div className="pxp-container">
           <div className="pxp-single-company-container pxp-has-columns">

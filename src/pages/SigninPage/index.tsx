@@ -81,8 +81,7 @@ const SigninPage: FC = () => {
                         </NavLink>
                       </div>
                       <div className="mt-4 text-center pxp-sign-hero-form-small">
-                        New to findustalent?
-                        <NavLink to={SIGNUP_PAGE_ROUTE}>Create an account</NavLink>
+                        New to findustalent? <NavLink to={SIGNUP_PAGE_ROUTE}>Create an account</NavLink>
                       </div>
                     </form>
                   </div>
