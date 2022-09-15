@@ -1,5 +1,17 @@
 import React, { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import {
+  DASHBOARD_ADD_JOB_ROUTE,
+  DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE,
+  DASHBOARD_HOME_ROUTE,
+  HOME_PAGE_ROUTE,
+  DASHBOARD_MANAGE_JOBS_ROUTE,
+  DASHBOARD_RECRUITER_CANDIDATE_ROUTE,
+  PRICING_PAGE_ROUTE,
+  SIGNIN_PAGE_ROUTE,
+  SIGNUP_PAGE_ROUTE,
+} from '../../config/routes';
+import BadgePillSuccess from '../BadgePillSuccess';
 
 const ClientFooter: FC = () => (
   <footer className="pxp-main-footer mt-100">
@@ -26,7 +38,7 @@ const ClientFooter: FC = () => (
                 <br />
                 San Francisco, CA 1980
                 <br />
-                office@jobster.com
+                help@findustalent.com
               </div>
             </div>
           </div>
@@ -37,19 +49,18 @@ const ClientFooter: FC = () => (
                   <h3>For Candidates</h3>
                   <ul className="pxp-footer-list">
                     <li>
-                      <a href="jobs-list-1.html">Find Jobs</a>
+                      <Link to={HOME_PAGE_ROUTE}>Apply for Jobs</Link>
                     </li>
                     <li>
-                      <a href="candidate-dashboard.html">Candidate Dashboard</a>
+                      <Link to={DASHBOARD_HOME_ROUTE}>Candidate Dashboard </Link>
                     </li>
                     <li>
-                      <a href="candidate-dashboard-applications.html">My Applications</a>
+                      <Link to={DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE}>My Applications</Link>
                     </li>
                     <li>
-                      <a href="candidate-dashboard-fav-jobs.html">Favourite Jobs</a>
-                    </li>
-                    <li>
-                      <a href="candidate-dashboard-inbox.html">My inbox</a>
+                      <Link to={HOME_PAGE_ROUTE}>
+                        My inbox <BadgePillSuccess label="pending" />
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -59,19 +70,21 @@ const ClientFooter: FC = () => (
                   <h3>For Employers</h3>
                   <ul className="pxp-footer-list">
                     <li>
-                      <a href="candidates-list-1.html">Find Candidates</a>
+                      <Link to={HOME_PAGE_ROUTE}>
+                        Find Candidates <BadgePillSuccess label="pending" />
+                      </Link>
                     </li>
                     <li>
-                      <a href="company-dashboard.html">Company Dashboard</a>
+                      <Link to={DASHBOARD_HOME_ROUTE}>Company Dashboard</Link>
                     </li>
                     <li>
-                      <a href="company-dashboard-new-job.html">Post a Job</a>
+                      <Link to={DASHBOARD_ADD_JOB_ROUTE}>Post a Job</Link>
                     </li>
                     <li>
-                      <a href="company-dashboard-jobs.html">Manage Jobs</a>
+                      <Link to={DASHBOARD_MANAGE_JOBS_ROUTE}>Manage Jobs</Link>
                     </li>
                     <li>
-                      <a href="company-dashboard-candidates.html">Candidates</a>
+                      <Link to={DASHBOARD_RECRUITER_CANDIDATE_ROUTE}>Candidates</Link>
                     </li>
                   </ul>
                 </div>
@@ -81,16 +94,17 @@ const ClientFooter: FC = () => (
                   <h3>About Us</h3>
                   <ul className="pxp-footer-list">
                     <li>
-                      <a href="about-us.html">About Us</a>
+                      <Link to={HOME_PAGE_ROUTE}>
+                        About Us <BadgePillSuccess label="pending" />
+                      </Link>
                     </li>
                     <li>
-                      <a href="pricing.html">Pricing</a>
+                      <Link to={PRICING_PAGE_ROUTE}>Pricing</Link>
                     </li>
                     <li>
-                      <a href="blog-list-1.html">Blog</a>
-                    </li>
-                    <li>
-                      <a href="blog-list-1.html">Contact Us</a>
+                      <Link to={HOME_PAGE_ROUTE}>
+                        Contact Us <BadgePillSuccess label="pending" />
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -100,16 +114,10 @@ const ClientFooter: FC = () => (
                   <h3>Helpful Resources</h3>
                   <ul className="pxp-footer-list">
                     <li>
-                      <a href="faqs.html">FAQs</a>
+                      <Link to={SIGNIN_PAGE_ROUTE}>Sign In</Link>
                     </li>
                     <li>
-                      <a href="sign-in.html">Sign In</a>
-                    </li>
-                    <li>
-                      <a href="sign-up.html">Sign Up</a>
-                    </li>
-                    <li>
-                      <a href="404.html">404 Page</a>
+                      <Link to={SIGNUP_PAGE_ROUTE}>Sign Up</Link>
                     </li>
                   </ul>
                 </div>
@@ -124,7 +132,7 @@ const ClientFooter: FC = () => (
         <div className="row justify-content-between align-items-center">
           <div className="col-lg-auto">
             <div className="pxp-footer-copyright pxp-text-light">
-              © 2021 findustalent. All Right Reserved.
+              © 2022 findustalent. All Right Reserved.
             </div>
           </div>
           <div className="col-lg-auto">
