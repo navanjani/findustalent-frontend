@@ -14,7 +14,7 @@ import {
 import BadgePillSuccess from '../BadgePillSuccess';
 
 const ClientFooter: FC = () => (
-  <footer className="pxp-main-footer mt-100">
+  <footer className="pxp-main-footer">
     <div
       className="pxp-main-footer-top pt-100 pb-100"
       style={{ backgroundColor: 'var(--pxpMainColorLight)' }}

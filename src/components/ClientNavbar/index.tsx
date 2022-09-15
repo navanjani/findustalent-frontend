@@ -12,6 +12,7 @@ import ClientNavbarMobile from '../ClientNavbarMobile';
 import { selectUser } from '../../store/user/selectors';
 import { useAppDispatch } from '../../store';
 import { getUserWithStoredToken } from '../../store/user/thunks';
+import BadgePillSuccess from '../BadgePillSuccess';
 
 const ClientNavbar: FC = () => {
   const dispatch = useAppDispatch();
@@ -58,13 +59,12 @@ const ClientNavbar: FC = () => {
                 <NavLink to={HOME_PAGE_ROUTE}>Home</NavLink>
               </li>
               <li className="dropdown">
-                <NavLink to={HOME_PAGE_ROUTE}>Product</NavLink>
+                <NavLink to={HOME_PAGE_ROUTE}>
+                  Product <BadgePillSuccess label="pending" />
+                </NavLink>
               </li>
               <li className="dropdown">
                 <NavLink to={PRICING_PAGE_ROUTE}>Pricing</NavLink>
-              </li>
-              <li className="dropdown">
-                <NavLink to={HOME_PAGE_ROUTE}>Candidate</NavLink>
               </li>
             </ul>
           </nav>

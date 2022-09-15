@@ -12,7 +12,7 @@ const PricingPage: FC = () => {
     }, 500);
   });
   return (
-    <PublicPage>
+    <PublicPage hasMargin>
       <section className="mt-100 pxp-no-hero">
         <div className="pxp-container">
           <h2 className="pxp-section-h2">Price Plans</h2>

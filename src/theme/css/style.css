@@ -125,6 +125,10 @@ a:hover {
     margin-top: 100px;
 }
 
+.mb-100 {
+    margin-bottom: 100px;
+}
+
 .pt-100 {
     padding-top: 100px;
 }
@@ -7109,6 +7113,10 @@ ol.pxp-comments-list {
 @media screen and (max-width: 767px) {
     .mt-100 {
         margin-top: 60px;
+    }
+
+    .mb-100 {
+        margin-bottom: 60px;
     }
 
     .pxp-hero-form-round.pxp-bigger {

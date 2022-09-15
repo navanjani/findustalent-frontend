@@ -3,7 +3,11 @@ import { useAppDispatch } from '../../store';
 import { setBodyColorWhite, setShowClientNavBar } from '../../store/appState/slice';
 import { IComponentWithChildren } from '../../types/components';
 
-const PublicPage: FC<IComponentWithChildren> = ({ children }) => {
+interface IPublicPage extends IComponentWithChildren {
+  hasMargin?: boolean;
+}
+
+const PublicPage: FC<IPublicPage> = ({ hasMargin, children }: IPublicPage) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -11,7 +15,9 @@ const PublicPage: FC<IComponentWithChildren> = ({ children }) => {
     dispatch(setShowClientNavBar(true));
   }, [dispatch]);
 
-  return <div className="public-page-wrapper">{children}</div>;
+  return <div className={`public-page-wrapper ${hasMargin ? 'mb-100' : ''}`}>{children}</div>;
 };
-
+PublicPage.defaultProps = {
+  hasMargin: false,
+};
 export default PublicPage;
