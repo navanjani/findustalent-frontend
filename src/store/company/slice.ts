@@ -4,7 +4,6 @@ import { ICompany } from '../../types/companies';
 import { IDepartment } from '../../types/departments';
 import { IJobCandidate } from '../../types/jobCandidates';
 import { IIndustry } from '../../types/industries';
-import { IApplicationStatuses } from '../../types/applicationStatuses';
 
 interface ICompanies {
   departments: IDepartment[];

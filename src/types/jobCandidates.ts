@@ -1,4 +1,4 @@
-import { IJob } from './jobs';
+import { IBaseJob } from './jobs';
 
 export interface IJobCandidateStatuses {
   id: number;
@@ -15,7 +15,7 @@ export interface IJobCandidate {
   linkedinUrl: string;
   phoneNumber: string;
   coverLetter: string;
-  job?: IJob;
+  job?: IBaseJob;
   createdAt?: string;
   jobCandidateStatuses?: IJobCandidateStatuses[];
 }

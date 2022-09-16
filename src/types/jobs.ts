@@ -1,19 +1,22 @@
 import { ICategory } from './categories';
 import { IDepartment } from './departments';
 
-export interface IJob {
+export interface IBaseJob {
   id?: number;
   slug?: string;
   title: string;
   location: string;
   categoryId: number;
-  description: string;
   careerLevel: number;
   employmentType: number;
-  salaryRange: number;
   departmentId: number;
-  closingDate: string;
   createdAt?: string;
+}
+
+export interface IJob extends IBaseJob {
+  description: string;
+  salaryRange: number;
+  closingDate: string;
   updatedAt?: string;
   category?: ICategory;
   department?: IDepartment;

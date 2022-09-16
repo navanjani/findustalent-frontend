@@ -6,6 +6,7 @@ import userReducer from './user/slice';
 import companyReducer from './company/slice';
 import jobsReducer from './jobs/slice';
 import publicReducer from './public/slice';
+import candidateReducer from './candidate/slice';
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     company: companyReducer,
     jobs: jobsReducer,
     public: publicReducer,
+    candidate: candidateReducer,
   },
 });
 

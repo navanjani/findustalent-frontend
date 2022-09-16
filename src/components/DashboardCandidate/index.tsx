@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import Dashboard from '../Dashboard';
 import DashboardAppLogo from '../DashboardAppLogo';
 import CandidateDashboardLeftNav from '../CandidateDashboardLeftNav';
@@ -9,17 +8,19 @@ import CandidateDashboardNav from '../CandidateDashboardNav';
 import DashboardFooter from '../DashboardFooter';
 import { IComponentWithChildren } from '../../types/components';
 import { setBodyColorLightPink } from '../../store/appState/slice';
+import { useAppDispatch } from '../../store';
 
 const DashboardCandidate: FC<IComponentWithChildren> = ({ children }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(setBodyColorLightPink());
   }, [dispatch]);
+
   return (
     <Dashboard>
       <div className="pxp-dashboard-side-panel d-none d-lg-block">
         <DashboardAppLogo />
-
         <CandidateDashboardLeftNav />
         <CandidateDashboardLeftFooter />
       </div>

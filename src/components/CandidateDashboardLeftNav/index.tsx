@@ -4,8 +4,8 @@ import {
   DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE,
   DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE,
   DASHBOARD_HOME_ROUTE,
-  DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE,
 } from '../../config/routes';
+import BadgePillSuccess from '../BadgePillSuccess';
 
 const CandidateDashboardLeftNav: FC = () => (
   <nav className="mt-3 mt-lg-4 d-flex justify-content-between flex-column pb-100">
@@ -23,7 +23,7 @@ const CandidateDashboardLeftNav: FC = () => (
           className={({ isActive }) => (isActive ? 'pxp-active' : '')}
         >
           <span className="fa fa-pencil" />
-          Edit Profile
+          Edit Profile <BadgePillSuccess label="pending" />
         </NavLink>
       </li>
       <li>
@@ -32,22 +32,7 @@ const CandidateDashboardLeftNav: FC = () => (
           className={({ isActive }) => (isActive ? 'pxp-active' : '')}
         >
           <span className="fa fa-file-text-o" />
-          Apllications
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={DASHBOARD_HOME_ROUTE} className={({ isActive }) => (isActive ? 'pxp-active' : '')}>
-          <span className="fa fa-heart-o" />
-          Favourite Jobs
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE}
-          className={({ isActive }) => (isActive ? 'pxp-active' : '')}
-        >
-          <span className="fa fa-lock" />
-          Change Password
+          Applications
         </NavLink>
       </li>
     </ul>
@@ -60,21 +45,9 @@ const CandidateDashboardLeftNav: FC = () => (
         >
           <div>
             <span className="fa fa-envelope-o" />
-            Inbox
+            Inbox <BadgePillSuccess label="pending" />
           </div>
-          <span className="badge rounded-pill">14</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="candidate-dashboard-notifications.html"
-          className="d-flex justify-content-between align-items-center"
-        >
-          <div>
-            <span className="fa fa-bell-o" />
-            Notifications
-          </div>
-          <span className="badge rounded-pill">5</span>
+          <span className="badge rounded-pill">0</span>
         </a>
       </li>
     </ul>
