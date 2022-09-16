@@ -18,10 +18,10 @@ const DashboardRecentJobApplicationsRow: FC<IDashboardRecentJobApplicationsRow> 
     </td>
     <td style={{ width: '25%' }}>
       <div className="pxp-candidate-dashboard-job-title">{candidateJob.job?.title}</div>
-      <div className="pxp-candidate-dashboard-job-company">Test</div>
+      <div className="pxp-candidate-dashboard-job-company">{candidateJob.job?.company?.name}</div>
     </td>
     <td style={{ width: '25%' }}>
-      <div className="pxp-candidate-dashboard-job-category">Marketing & Communication</div>
+      <div className="pxp-candidate-dashboard-job-category">{candidateJob.job?.departmentId}</div>
     </td>
     <td style={{ width: '25%' }}>
       <div className="pxp-candidate-dashboard-job-location">
@@ -30,7 +30,7 @@ const DashboardRecentJobApplicationsRow: FC<IDashboardRecentJobApplicationsRow> 
       </div>
     </td>
     <td style={{ width: '10%' }}>
-      <div className="pxp-candidate-dashboard-job-type">Full-time</div>
+      <div className="pxp-candidate-dashboard-job-type">{candidateJob.job?.employmentType}</div>
     </td>
     <td>
       <div className="pxp-dashboard-table-options">

@@ -1,5 +1,6 @@
 import { ICategory } from './categories';
 import { IDepartment } from './departments';
+import { ICompany } from './companies';
 
 export interface IBaseJob {
   id?: number;
@@ -11,6 +12,7 @@ export interface IBaseJob {
   employmentType: number;
   departmentId: number;
   createdAt?: string;
+  company?: ICompany;
 }
 
 export interface IJob extends IBaseJob {

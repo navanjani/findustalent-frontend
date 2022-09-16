@@ -68,12 +68,16 @@ const ClientNavbar: FC = () => {
               </li>
             </ul>
           </nav>
+
           <nav className="pxp-user-nav pxp-on-light d-none d-sm-flex">
-            <NavLink to={DASHBOARD_ADD_JOB_ROUTE}>
-              <button type="button" className="btn rounded-pill pxp-nav-btn">
-                Post a Job
-              </button>
-            </NavLink>
+            {user && (
+              <NavLink to={DASHBOARD_ADD_JOB_ROUTE}>
+                <button type="button" className="btn rounded-pill pxp-nav-btn">
+                  Post a Job
+                </button>
+              </NavLink>
+            )}
+
             {user ? (
               <NavLink
                 className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"

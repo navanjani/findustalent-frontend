@@ -17,7 +17,7 @@ const DashboardRecentJobApplications: FC<IDashboardRecentJobApplications> = ({
         <table className="table align-middle">
           <tbody>
             {candidateJobs.map((candidateJob) => (
-              <DashboardRecentJobApplicationsRow candidateJob={candidateJob} />
+              <DashboardRecentJobApplicationsRow key={candidateJob.id} candidateJob={candidateJob} />
             ))}
           </tbody>
         </table>

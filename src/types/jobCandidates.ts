@@ -1,4 +1,5 @@
 import { IBaseJob } from './jobs';
+import { ICompany } from './companies';
 
 export interface IJobCandidateStatuses {
   id: number;
