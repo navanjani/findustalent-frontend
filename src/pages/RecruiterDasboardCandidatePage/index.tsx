@@ -1,7 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import DashboardRecruiter from '../../components/DashboardRecruiter';
-
 import { selectCompanyCandidates } from '../../store/company/selectors';
 import RecruiterDashboardCandidateRow from '../../components/DashboardRectuiterCandidateRow';
 import { useAppDispatch } from '../../store';
@@ -9,15 +8,13 @@ import { fetchCompanyCandidates } from '../../store/company/thunks';
 import { selectUser } from '../../store/user/selectors';
 import DashboardPagination from '../../components/DashboardPagination';
 import { fetchApplicationStatuses } from '../../store/jobs/thunks';
-// import { selectApplicationStatusesAsObject } from '../../store/jobs/selectors';
-// import { IApplicationStatusesMap } from '../../types/applicationStatuses';
-// import { IJobCandidateStatuses } from '../../types/jobCandidateStatuses';
+import { selectApplicationStatusesAsObject } from '../../store/jobs/selectors';
+import { IApplicationStatusesMap } from '../../types/applicationStatuses';
 
 const RecruiterCandidatePage: FC = () => {
   const dispatch = useAppDispatch();
   const candidates = useSelector(selectCompanyCandidates);
-  // const jobCandidateStatuses: IJobCandidateStatuses = useSelector(selectJobCandidateStatuses);
-  // const applicationStatuses: IApplicationStatusesMap = useSelector(selectApplicationStatusesAsObject);
+  const applicationStatuses: IApplicationStatusesMap = useSelector(selectApplicationStatusesAsObject);
   const user = useSelector(selectUser);
 
   useEffect(() => {
@@ -69,12 +66,12 @@ const RecruiterCandidatePage: FC = () => {
             </thead>
             <tbody>
               {candidates &&
+                applicationStatuses &&
                 candidates.map((candidate) => (
                   <RecruiterDashboardCandidateRow
                     key={candidate.id}
                     candidate={candidate}
-                    // applicationStatuses={applicationStatuses}
-                    // jobCandidateStatuses={jobCandidateStatuses}
+                    applicationStatuses={applicationStatuses}
                   />
                 ))}
             </tbody>

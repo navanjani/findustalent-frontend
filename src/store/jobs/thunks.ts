@@ -60,9 +60,8 @@ export const fetchCategories = () => async (dispatch: AppDispatch) => {
 export const fetchApplicationStatuses = () => async (dispatch: AppDispatch) => {
   dispatch(appLoading());
   try {
-    const response = await axios.get(`${apiUrl}/jobs/stasuses`);
-    console.log(response.data.statuses);
-    dispatch(setApplicationStatuses(response.data.statuses));
+    const response = await axios.get(`${apiUrl}/jobs/statuses`);
+    dispatch(setApplicationStatuses(response.data.applicationStatuses));
   } catch (error: any) {
     apiError(dispatch, error);
     dispatch(appDoneLoading());

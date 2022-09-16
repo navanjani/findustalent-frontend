@@ -13,7 +13,6 @@ interface ICompanies {
   candidate: IJobCandidate | null;
   company: ICompany | null;
   industries: IIndustry[];
-  jobCandidateStatuses: IApplicationStatuses[];
 }
 const initialState: ICompanies = {
   departments: [],
@@ -22,7 +21,6 @@ const initialState: ICompanies = {
   candidate: null,
   company: null,
   industries: [],
-  jobCandidateStatuses: [],
 };
 export const companySlice = createSlice({
   name: 'company',
@@ -46,22 +44,12 @@ export const companySlice = createSlice({
     setCandidate: (state, action) => {
       state.candidate = action.payload;
     },
-    setJobCandidateStatuses: (state, action) => {
-      state.jobCandidateStatuses = action.payload;
-    },
 
     // addNewJob: (state, action) => {
     //   state.jobs.push(action.payload);
     // },
   },
 });
-export const {
-  setDepartments,
-  setJobs,
-  setCompany,
-  setCandidates,
-  setIndustries,
-  setCandidate,
-  setJobCandidateStatuses,
-} = companySlice.actions;
+export const { setDepartments, setJobs, setCompany, setCandidates, setIndustries, setCandidate } =
+  companySlice.actions;
 export default companySlice.reducer;

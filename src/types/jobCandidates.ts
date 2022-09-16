@@ -1,5 +1,11 @@
 import { IJob } from './jobs';
 
+export interface IJobCandidateStatuses {
+  id: number;
+  status: number;
+  createdAt: string;
+}
+
 export interface IJobCandidate {
   id?: number;
   firstName: string;
@@ -11,4 +17,5 @@ export interface IJobCandidate {
   coverLetter: string;
   job?: IJob;
   createdAt?: string;
+  jobCandidateStatuses?: IJobCandidateStatuses[];
 }
