@@ -1,21 +1,11 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import HomeHero from '../../components/HomeHero';
-import { setBodyColorLightBlue, setShowClientNavBar } from '../../store/appState/slice';
-import { useAppDispatch } from '../../store';
+import PublicPage from '../../components/PublicPage';
 
-const HomePage: FC = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(setBodyColorLightBlue());
-    dispatch(setShowClientNavBar(true));
-  }, [dispatch]);
-
-  return (
-    <div className="public-page-wrapper">
-      <HomeHero />
-    </div>
-  );
-};
+const HomePage: FC = () => (
+  <PublicPage lightPage={false}>
+    <HomeHero />
+  </PublicPage>
+);
 
 export default HomePage;

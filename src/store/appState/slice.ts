@@ -5,6 +5,7 @@ const initialState = {
   message: null,
   showClientNavBar: true,
   bodyColor: '#FFFFFF',
+  lightPage: true,
 };
 
 export const appStateSlice = createSlice({
@@ -25,6 +26,9 @@ export const appStateSlice = createSlice({
     },
     setShowClientNavBar: (state, action) => {
       state.showClientNavBar = action.payload;
+    },
+    setLightPage: (state, action) => {
+      state.lightPage = action.payload;
     },
     setBodyColorLightBlue: (state) => {
       state.bodyColor = 'var(--pxpMainColorLight)';
@@ -47,6 +51,7 @@ export const {
   setBodyColorLightBlue,
   setBodyColorWhite,
   setBodyColorLightPink,
+  setLightPage,
 } = appStateSlice.actions;
 
 export default appStateSlice.reducer;

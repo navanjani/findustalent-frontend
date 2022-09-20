@@ -13,11 +13,13 @@ import { selectUser } from '../../store/user/selectors';
 import { useAppDispatch } from '../../store';
 import { getUserWithStoredToken } from '../../store/user/thunks';
 import BadgePillSuccess from '../BadgePillSuccess';
+import { selectLightPage } from '../../store/appState/selectors';
 
 const ClientNavbar: FC = () => {
   const dispatch = useAppDispatch();
   const [stickyClass, setStickyClass] = useState('');
   const user = useSelector(selectUser);
+  const lightPage = useSelector(selectLightPage);
 
   // https://stackoverflow.com/a/69723476
   const stickNavbar = () => {
@@ -69,7 +71,7 @@ const ClientNavbar: FC = () => {
             </ul>
           </nav>
 
-          <nav className="pxp-user-nav d-none d-sm-flex">
+          <nav className={`pxp-user-nav d-none d-sm-flex ${lightPage ? 'pxp-on-light' : ''}`}>
             {user && (
               <NavLink to={DASHBOARD_ADD_JOB_ROUTE}>
                 <button type="button" className="btn rounded-pill pxp-nav-btn">
