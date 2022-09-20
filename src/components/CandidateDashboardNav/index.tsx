@@ -19,7 +19,7 @@ const CandidateDashboardNav: FC = () => {
       <div className="dropdown pxp-user-nav-dropdown pxp-user-notifications">
         <span role="button" className="dropdown-toggle" data-bs-toggle="dropdown">
           <span className="fa fa-bell-o" />
-          <div className="pxp-user-notifications-counter">5</div>
+          <div className="pxp-user-notifications-counter">0</div>
         </span>
         <ul className="dropdown-menu dropdown-menu-end ">
           <li>
