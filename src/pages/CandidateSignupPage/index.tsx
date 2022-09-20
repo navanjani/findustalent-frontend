@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import signupImageCandidate from '../../theme/images/signup-big-fig.png';
+import signupImageCandidate from '../../theme/images/customer-2.png';
 import PublicPage from '../../components/PublicPage';
 import { DASHBOARD_HOME_ROUTE } from '../../config/routes';
 import { selectToken } from '../../store/user/selectors';

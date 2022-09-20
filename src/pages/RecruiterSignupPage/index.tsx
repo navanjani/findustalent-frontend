@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import signupImageRecruiter from '../../theme/images/customer-2.png';
+import signupImageRecruiter from '../../theme/images/customer-4.png';
 import { COMPANY_REGISTER_ROUTE, DASHBOARD_HOME_ROUTE } from '../../config/routes';
 import { selectToken, selectUser } from '../../store/user/selectors';
 import SignUpUser from '../../components/SignUpUser';
