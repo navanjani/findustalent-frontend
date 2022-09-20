@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import {
@@ -58,6 +60,7 @@ function App() {
   return (
     <div className="App" style={{ backgroundColor: bodyColor }}>
       {showClientNavBar && <ClientNavbar />}
+      <ToastContainer />
       <Routes>
         <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
         <Route path={DYNAMIC_COMPANY_JOBS_ROUTE} element={<CompanyJobsPage />} />
