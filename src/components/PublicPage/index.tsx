@@ -17,6 +17,10 @@ const PublicPage: FC<IPublicPage> = ({ hasMargin, lightPage, children }: IPublic
     dispatch(setLightPage(lightPage));
   }, [dispatch]);
 
+  useEffect(() => {
+    document.title = 'Find the perfect talent | findustalent';
+  }, []);
+
   return <div className={`public-page-wrapper ${hasMargin ? 'mb-100' : ''}`}>{children}</div>;
 };
 PublicPage.defaultProps = {
