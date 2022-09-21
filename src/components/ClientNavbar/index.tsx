@@ -14,6 +14,7 @@ import { useAppDispatch } from '../../store';
 import { getUserWithStoredToken } from '../../store/user/thunks';
 import BadgePillSuccess from '../BadgePillSuccess';
 import { selectLightPage } from '../../store/appState/selectors';
+import { logOut } from '../../store/user/slice';
 
 const ClientNavbar: FC = () => {
   const dispatch = useAppDispatch();
@@ -98,6 +99,16 @@ const ClientNavbar: FC = () => {
               >
                 Sign in
               </NavLink>
+            )}
+            {user && (
+              <button
+                className="btn rounded-pill pxp-user-nav-trigger pxp-on-light"
+                type="button"
+                data-bs-toggle="modal"
+                onClick={() => dispatch(logOut())}
+              >
+                Sign out
+              </button>
             )}
           </nav>
         </div>

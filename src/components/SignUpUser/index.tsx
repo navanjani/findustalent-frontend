@@ -63,7 +63,7 @@ const SignUpUser: FC<ISignUpUser> = ({ userType }: ISignUpUser) => {
                 <div className="col">
                   <div className="form-floating mb-3">
                     <FormInput
-                      type="text"
+                      type="email"
                       label={userType === 2 ? 'Work-Email Address' : 'Email Address'}
                       icon="fa-envelope-o"
                       value={formData.email}

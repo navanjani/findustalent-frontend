@@ -21,7 +21,7 @@ const CompanyBanner: FC<ICompanyBanner> = ({ company }: ICompanyBanner) => (
             <h1>{company?.name}</h1>
             <div className="pxp-single-company-hero-location">
               <span className="fa fa-globe" />
-              Location
+              {company?.location}
             </div>
           </div>
         </div>
