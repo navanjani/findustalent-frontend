@@ -7,18 +7,14 @@ import { selectUser } from '../../store/user/selectors';
 import { selectCandidateJobs } from '../../store/candidate/selectors';
 import BadgePillSuccess from '../../components/BadgePillSuccess';
 import DashboardRecentJobApplications from '../../components/DashboardRecentJobApplications';
-import { fetchCompanyDepartments } from '../../store/company/thunks';
-import { selectDepartments } from '../../store/company/selectors';
 
 const CandidateDashboardPage: FC = () => {
   const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
   const candidateJobs = useSelector(selectCandidateJobs);
-  const departments = useSelector(selectDepartments);
 
   useEffect(() => {
     dispatch(fetchCandidateJobs());
-    dispatch(fetchCompanyDepartments());
   }, [dispatch, user]);
 
   return (

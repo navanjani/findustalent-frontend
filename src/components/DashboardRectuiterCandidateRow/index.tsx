@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import candidateImage from '../../theme/images/ph-small.jpg';
 import { IJobCandidate } from '../../types/jobCandidates';
 import { IApplicationStatusesMap } from '../../types/applicationStatuses';
+import { getLatestJobStatusForApplication } from '../../helpers/jobStatus';
 
 interface IRecruiterDashboardCandidateRow {
   candidate: IJobCandidate;
@@ -12,10 +13,10 @@ const RecruiterDashboardCandidateRow: FC<IRecruiterDashboardCandidateRow> = ({
   candidate,
   applicationStatuses,
 }: IRecruiterDashboardCandidateRow) => {
-  /* eslint arrow-body-style:0 */
-  const latestStatus = candidate.jobCandidateStatuses?.reduce((previous, current) => {
-    return previous.createdAt > current.createdAt ? previous : current;
-  });
+  const latestStatus = candidate.jobCandidateStatuses
+    ? getLatestJobStatusForApplication(candidate.jobCandidateStatuses)
+    : null;
+
   return (
     <tr>
       <td>

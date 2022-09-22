@@ -9,7 +9,11 @@ const CompanyDescription: FC<ICompanyDescription> = ({ company }: ICompanyDescri
   <div className="pxp-single-company-content">
     <h2>About Company</h2>
     <p>{company?.name}</p>
-    <p>TODO</p>
+    <p>
+      Founded in Amsterdam in 2013, we now work with most prominent investors, entrepreneurs and government
+      organizations to provide transparency, analysis and insights on venture capital activity. Our mission is
+      to accelerate entrepreneurship & innovation through data for governments, corporates and VCs, founders.
+    </p>
   </div>
 );
 export default CompanyDescription;

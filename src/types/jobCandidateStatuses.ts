@@ -1,6 +1,6 @@
 export interface IJobCandidateStatuses {
   id: number;
-  status: string;
+  status: number;
   createdAt: string;
   updatedAt: string;
 }

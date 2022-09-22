@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import moment from 'moment';
 import companyLogo from '../../theme/images/company-logo-2.png';
 import { IJob } from '../../types/jobs';
 import { ICompany } from '../../types/companies';
@@ -35,9 +36,12 @@ const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType, company }: I
           <div className="pxp-jobs-card-2-category-label">{job.category?.name}</div>
         </a>
         <div className="pxp-jobs-card-2-bottom-right">
-          <span className="pxp-jobs-card-2-date pxp-text-light">Duration</span>
+          <span className="pxp-jobs-card-2-date pxp-text-light">
+            Closing Date : {moment(job?.closingDate).format('MMMM Do YYYY')}
+          </span>
+
           <a href="single-company-1.html" className="pxp-jobs-card-2-company">
-            Company
+            {company.name}
           </a>
         </div>
       </div>

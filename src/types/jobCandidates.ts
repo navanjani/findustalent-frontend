@@ -1,11 +1,5 @@
 import { IBaseJob } from './jobs';
-import { ICompany } from './companies';
-
-export interface IJobCandidateStatuses {
-  id: number;
-  status: number;
-  createdAt: string;
-}
+import { IJobCandidateStatuses } from './jobCandidateStatuses';
 
 export interface IJobCandidate {
   id?: number;
