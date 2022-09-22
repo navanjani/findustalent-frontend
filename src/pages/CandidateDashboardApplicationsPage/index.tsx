@@ -7,15 +7,23 @@ import { useAppDispatch } from '../../store';
 import { selectUser } from '../../store/user/selectors';
 import { selectCandidateJobs } from '../../store/candidate/selectors';
 import CandidateApplicationPageRaw from '../../components/CandidateApplicationPageRaw';
+import { fetchApplicationStatuses, fetchEmploymentTypes } from '../../store/jobs/thunks';
+import { IEmploymentTypeMap } from '../../types/employmentTypes';
+import { selectApplicationStatusesAsObject, selectEmploymentTypesAsObject } from '../../store/jobs/selectors';
+import { IApplicationStatusesMap } from '../../types/applicationStatuses';
 
 const CandidateDashboardApplicationsPage: FC = () => {
   const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
   const candidateJobs = useSelector(selectCandidateJobs);
+  const employmentTypes: IEmploymentTypeMap = useSelector(selectEmploymentTypesAsObject);
+  const applicationStatuses: IApplicationStatusesMap = useSelector(selectApplicationStatusesAsObject);
 
   useEffect(() => {
     dispatch(fetchCandidateJobs());
     dispatch(fetchCompanyDepartments());
+    dispatch(fetchEmploymentTypes());
+    dispatch(fetchApplicationStatuses());
   }, [dispatch, user]);
   return (
     <DashboardCandidate>
@@ -58,7 +66,7 @@ const CandidateDashboardApplicationsPage: FC = () => {
                 </th>
                 <th style={{ width: '25%' }}>Job</th>
                 <th style={{ width: '15%' }}>Company</th>
-                <th style={{ width: '20%' }}>Category</th>
+                <th style={{ width: '20%' }}>Status</th>
                 <th style={{ width: '12%' }}>Type</th>
                 <th>
                   Date
@@ -70,7 +78,12 @@ const CandidateDashboardApplicationsPage: FC = () => {
             <tbody>
               {candidateJobs &&
                 candidateJobs.map((candidateJob) => (
-                  <CandidateApplicationPageRaw key={candidateJob.id} candidateJob={candidateJob} />
+                  <CandidateApplicationPageRaw
+                    key={candidateJob.id}
+                    candidateJob={candidateJob}
+                    employmentTypes={employmentTypes}
+                    applicationStatuses={applicationStatuses}
+                  />
                 ))}
             </tbody>
           </table>
