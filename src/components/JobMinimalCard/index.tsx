@@ -15,7 +15,7 @@ const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType, company }: I
   <div className="col-xl-6 pxp-jobs-card-2-container">
     <div className="pxp-jobs-card-2 pxp-has-border">
       <div className="pxp-jobs-card-2-top">
-        <NavLink to="/">
+        <NavLink to={`/c/${company.slug}`}>
           <span className="pxp-jobs-card-2-company-logo" style={{ backgroundImage: `url(${companyLogo})` }} />
         </NavLink>
         <div className="pxp-jobs-card-2-info">
@@ -23,26 +23,26 @@ const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType, company }: I
             <span className="pxp-jobs-card-2-title">{job.title}</span>
           </NavLink>
           <div className="pxp-jobs-card-2-details">
-            <a href="jobs-list-1.html" className="pxp-jobs-card-2-location">
+            <span className="pxp-jobs-card-2-location">
               <span className="fa fa-globe"> </span>
               {job.location}
-            </a>
+            </span>
             <div className="pxp-jobs-card-2-type">{employmentType}</div>
           </div>
         </div>
       </div>
       <div className="pxp-jobs-card-2-bottom">
-        <a href="jobs-list-1.html" className="pxp-jobs-card-2-category">
-          <div className="pxp-jobs-card-2-category-label">{job.category?.name}</div>
-        </a>
+        <span className="pxp-jobs-card-2-category">
+          <div className="pxp-jobs-card-2-category-label">Category: {job.category?.name}</div>
+        </span>
         <div className="pxp-jobs-card-2-bottom-right">
           <span className="pxp-jobs-card-2-date pxp-text-light">
-            Closing Date : {moment(job?.closingDate).format('MMMM Do YYYY')}
+            {moment(job?.closingDate).fromNow()} by{' '}
           </span>
 
-          <a href="single-company-1.html" className="pxp-jobs-card-2-company">
+          <NavLink to={`/c/${company.slug}`} className="pxp-jobs-card-2-company">
             {company.name}
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>
