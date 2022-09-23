@@ -53,58 +53,61 @@ import JobDetailPage from './pages/JobDetailPage';
 import RegisterCompanyPage from './pages/RegisterCompanyPage';
 import PricingPage from './pages/PricingPage';
 import RecruiterDashboardSingleCandidate from './pages/RecruiterDashboardSingleCandidate';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const showClientNavBar = useSelector(selectShowClientNavBar);
   const bodyColor = useSelector(selectBodyColor);
   return (
     <div className="App" style={{ backgroundColor: bodyColor }}>
-      {showClientNavBar && <ClientNavbar />}
-      <ToastContainer />
-      <Routes>
-        <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
-        <Route path={DYNAMIC_COMPANY_JOBS_ROUTE} element={<CompanyJobsPage />} />
-        <Route path={SIGNUP_PAGE_ROUTE} element={<SignUpPage />} />
-        <Route path={SIGNIN_PAGE_ROUTE} element={<SigninPage />} />
-        <Route path={CONTACT_US_ROUTE} element={<ContactUsPage />} />
-        <Route path={DASHBOARD_HOME_ROUTE} element={<DashboardPage />} />
-        <Route path={DASHBOARD_ADD_JOB_ROUTE} element={<RecruiterAddJobPage />} />
-        <Route path={DASHBOARD_MANAGE_JOBS_ROUTE} element={<RecruiterManageJobPage />} />
-        <Route path={DASHBOARD_RECRUITER_CANDIDATE_ROUTE} element={<RecruiterCandidatePage />} />
-        <Route
-          path={DYNAMIC_DASHBOARD_RECRUITER_VIEW_CANDIDATE}
-          element={<RecruiterDashboardSingleCandidate />}
-        />
-        <Route
-          path={DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE}
-          element={<RecruiterDashboardChangePasswordPage />}
-        />
-        <Route path={DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE} element={<RecruiterEditProfilePage />} />
-        <Route path={RECRUITER_SIGNUP_PAGE_ROUTE} element={<RecruiterSignupPage />} />
-        <Route path={CANDIDATE_SIGNUP_PAGE_ROUTE} element={<CandidateSignupPage />} />
-        <Route path={DYNAMIC_CANDIDATE_DETAILS_ROUTE} element={<CandidateDetailPage />} />
-        <Route
-          path={DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE}
-          element={<CandidateDashboardEditProfilePage />}
-        />
-        <Route
-          path={DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE}
-          element={<CandidateDashboardApplicationsPage />}
-        />
-        <Route
-          path={DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE}
-          element={<CandidateDashboardChangePasswordPage />}
-        />
-        <Route
-          path={DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE}
-          element={<RecruiterDashboardSubscriptionsPage />}
-        />
-        <Route path={DYNAMIC_JOB_DETAILS_ROUTE} element={<JobDetailPage />} />
-        <Route path={COMPANY_REGISTER_ROUTE} element={<RegisterCompanyPage />} />
-        <Route path={PRICING_PAGE_ROUTE} element={<PricingPage />} />
-      </Routes>
+      <ScrollToTop>
+        {showClientNavBar && <ClientNavbar />}
+        <ToastContainer />
+        <Routes>
+          <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
+          <Route path={DYNAMIC_COMPANY_JOBS_ROUTE} element={<CompanyJobsPage />} />
+          <Route path={SIGNUP_PAGE_ROUTE} element={<SignUpPage />} />
+          <Route path={SIGNIN_PAGE_ROUTE} element={<SigninPage />} />
+          <Route path={CONTACT_US_ROUTE} element={<ContactUsPage />} />
+          <Route path={DASHBOARD_HOME_ROUTE} element={<DashboardPage />} />
+          <Route path={DASHBOARD_ADD_JOB_ROUTE} element={<RecruiterAddJobPage />} />
+          <Route path={DASHBOARD_MANAGE_JOBS_ROUTE} element={<RecruiterManageJobPage />} />
+          <Route path={DASHBOARD_RECRUITER_CANDIDATE_ROUTE} element={<RecruiterCandidatePage />} />
+          <Route
+            path={DYNAMIC_DASHBOARD_RECRUITER_VIEW_CANDIDATE}
+            element={<RecruiterDashboardSingleCandidate />}
+          />
+          <Route
+            path={DASHBOARD_RECRUITER_CHANGE_PASSWORD_ROUTE}
+            element={<RecruiterDashboardChangePasswordPage />}
+          />
+          <Route path={DASHBOARD_RECRUITER_EDIT_PROFILE_ROUTE} element={<RecruiterEditProfilePage />} />
+          <Route path={RECRUITER_SIGNUP_PAGE_ROUTE} element={<RecruiterSignupPage />} />
+          <Route path={CANDIDATE_SIGNUP_PAGE_ROUTE} element={<CandidateSignupPage />} />
+          <Route path={DYNAMIC_CANDIDATE_DETAILS_ROUTE} element={<CandidateDetailPage />} />
+          <Route
+            path={DASHBOARD_CANDIDATE_EDIT_PROFILE_ROUTE}
+            element={<CandidateDashboardEditProfilePage />}
+          />
+          <Route
+            path={DASHBOARD_CANDIDATE_APPLICATIONS_ROUTE}
+            element={<CandidateDashboardApplicationsPage />}
+          />
+          <Route
+            path={DASHBOARD_CANDIDATE_CHANGE_PASSWORD_ROUTE}
+            element={<CandidateDashboardChangePasswordPage />}
+          />
+          <Route
+            path={DASHBOARD_RECRUITER_SUBSCRIPTIONS_ROUTE}
+            element={<RecruiterDashboardSubscriptionsPage />}
+          />
+          <Route path={DYNAMIC_JOB_DETAILS_ROUTE} element={<JobDetailPage />} />
+          <Route path={COMPANY_REGISTER_ROUTE} element={<RegisterCompanyPage />} />
+          <Route path={PRICING_PAGE_ROUTE} element={<PricingPage />} />
+        </Routes>
 
-      {showClientNavBar && <ClientFooter />}
+        {showClientNavBar && <ClientFooter />}
+      </ScrollToTop>
     </div>
   );
 }
