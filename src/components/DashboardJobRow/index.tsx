@@ -43,7 +43,7 @@ const DashboardJobRow: FC<IDashboardJobRow> = ({ job }: IDashboardJobRow) => {
       </td>
       <td>
         <button type="button" className="pxp-company-dashboard-job-applications">
-          3 Candidates
+          {job.jobCandidates && job.jobCandidates.length} Candidates
         </button>
       </td>
       <td>
