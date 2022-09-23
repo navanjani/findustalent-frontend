@@ -20,7 +20,9 @@ const RecruiterManageJobPage: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchCompanyJobs());
+    if (user?.companyId) {
+      dispatch(fetchCompanyJobs());
+    }
   }, [dispatch, user]);
 
   return (

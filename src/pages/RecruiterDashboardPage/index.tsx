@@ -19,8 +19,10 @@ const RecruiterDashboardPage: FC = () => {
   const user = useSelector(selectUser);
 
   useEffect(() => {
-    dispatch(fetchCompanyJobs());
-    dispatch(fetchCompanyCandidates());
+    if (user?.companyId) {
+      dispatch(fetchCompanyJobs());
+      dispatch(fetchCompanyCandidates());
+    }
   }, [dispatch, user]);
 
   return (
