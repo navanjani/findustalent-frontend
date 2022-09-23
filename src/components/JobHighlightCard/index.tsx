@@ -30,7 +30,7 @@ const JobHighlightCard: FC<IJobHighlightCard> = ({ job }: IJobHighlightCard) => 
   }, [dispatch]);
 
   return (
-    <div className="pxp-single-job-side-panel mt-5 mt-lg-0">
+    <>
       <div className="mt-4">
         <div className="pxp-single-job-side-info-label pxp-text-light">Career Level</div>
         <div className="pxp-single-job-side-info-data">
@@ -57,7 +57,7 @@ const JobHighlightCard: FC<IJobHighlightCard> = ({ job }: IJobHighlightCard) => 
         <div className="pxp-single-job-side-info-label pxp-text-light">Department</div>
         <div className="pxp-single-job-side-info-data">{job.department?.name}</div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -35,14 +35,6 @@ const CompanyDetailCard: FC<ICompanyDetailCard> = ({ company }: ICompanyDetailCa
         <div className="pxp-single-company-side-info-data">2005</div>
       </div>
       <div className="mt-4">
-        <div className="pxp-single-company-side-info-label pxp-text-light">Phone</div>
-        <div className="pxp-single-company-side-info-data">0124 456 789</div>
-      </div>
-      <div className="mt-4">
-        <div className="pxp-single-company-side-info-label pxp-text-light">Email</div>
-        <div className="pxp-single-company-side-info-data">{company.domain}</div>
-      </div>
-      <div className="mt-4">
         <div className="pxp-single-company-side-info-label pxp-text-light">Location</div>
         <div className="pxp-single-company-side-info-data">{company.location}</div>
       </div>
@@ -51,7 +43,12 @@ const CompanyDetailCard: FC<ICompanyDetailCard> = ({ company }: ICompanyDetailCa
         <div className="pxp-single-company-side-info-data">
           {' '}
           <span>
-            <a rel="noreferrer" target="_blank" href={`https://${company?.domain}`}>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={`https://${company?.domain}`}
+              style={{ color: company.textColor }}
+            >
               {company?.domain}
             </a>
           </span>
@@ -61,22 +58,22 @@ const CompanyDetailCard: FC<ICompanyDetailCard> = ({ company }: ICompanyDetailCa
         <div className="pxp-single-company-side-info-data">
           <ul className="list-unstyled pxp-single-company-side-info-social">
             <li>
-              <NavLink to="/">
+              <NavLink to="/" style={{ color: company?.textColor }}>
                 <span className="fa fa-facebook" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">
+              <NavLink to="/" style={{ color: company?.textColor }}>
                 <span className="fa fa-twitter" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">
+              <NavLink to="/" style={{ color: company?.textColor }}>
                 <span className="fa fa-instagram" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">
+              <NavLink to="/" style={{ color: company?.textColor }}>
                 <span className="fa fa-linkedin" />
               </NavLink>
             </li>

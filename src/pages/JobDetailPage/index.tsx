@@ -35,8 +35,6 @@ const JobDetailPage: FC = () => {
     dispatch(getUserWithStoredToken());
   }, [token]);
 
-  console.log(user);
-
   return (
     <PublicPage hasMargin>
       <section>
@@ -67,6 +65,7 @@ const JobDetailPage: FC = () => {
                           type="button"
                           disabled={showApplyForm}
                           className="btn ms-2 pxp-single-job-apply-btn rounded-pill"
+                          style={{ backgroundColor: company?.primaryColor, color: company?.textColor }}
                           onClick={() => setShowApplyForm(true)}
                         >
                           Apply Now
@@ -88,6 +87,7 @@ const JobDetailPage: FC = () => {
                         type="button"
                         disabled={showApplyForm}
                         className="btn rounded-pill pxp-section-cta"
+                        style={{ backgroundColor: company?.primaryColor, color: company?.textColor }}
                         onClick={() => {
                           setShowApplyForm(true);
                         }}
@@ -100,8 +100,18 @@ const JobDetailPage: FC = () => {
                 <div>{showApplyForm && <ApplyForJobForm companySlug={companySlug} jobSlug={jobSlug} />}</div>
               </div>
               <div className="col-lg-5 col-xl-4 col-xxl-3">
-                {job && <JobHighlightCard job={job} />}
-                <div className="mt-3 mt-lg-4 pxp-single-job-side-panel">
+                {job && (
+                  <div
+                    className="pxp-single-job-side-panel mt-5 mt-lg-0"
+                    style={{ backgroundColor: company?.primaryColor, color: company?.textColor }}
+                  >
+                    <JobHighlightCard job={job} />
+                  </div>
+                )}
+                <div
+                  className="mt-3 mt-lg-4 pxp-single-job-side-panel"
+                  style={{ backgroundColor: company?.primaryColor, color: company?.textColor }}
+                >
                   <div className="pxp-single-job-side-company">
                     <div
                       className="pxp-single-job-side-company-logo pxp-cover"
@@ -109,7 +119,7 @@ const JobDetailPage: FC = () => {
                     />
                     <div className="pxp-single-job-side-company-profile">
                       <div className="pxp-single-job-side-company-name">{company?.name}</div>
-                      <Link to={`/c/${company?.slug}`}>
+                      <Link to={`/c/${company?.slug}`} style={{ color: company?.textColor }}>
                         <span>View profile</span>
                       </Link>
                     </div>
@@ -124,14 +134,6 @@ const JobDetailPage: FC = () => {
                     <div className="pxp-single-job-side-info-data">2005</div>
                   </div>
                   <div className="mt-4">
-                    <div className="pxp-single-job-side-info-label pxp-text-light">Phone</div>
-                    <div className="pxp-single-job-side-info-data">0124 456 789</div>
-                  </div>
-                  <div className="mt-4">
-                    <div className="pxp-single-job-side-info-label pxp-text-light">Email</div>
-                    <div className="pxp-single-job-side-info-data">{company?.slug}</div>
-                  </div>
-                  <div className="mt-4">
                     <div className="pxp-single-job-side-info-label pxp-text-light">Location</div>
                     <div className="pxp-single-job-side-info-data">{job?.location}</div>
                   </div>
@@ -139,7 +141,12 @@ const JobDetailPage: FC = () => {
                     <div className="pxp-single-job-side-info-label pxp-text-light">Website</div>
                     <div className="pxp-single-job-side-info-data">
                       <span>
-                        <a rel="noreferrer" target="_blank" href={`https://${company?.domain}`}>
+                        <a
+                          rel="noreferrer"
+                          target="_blank"
+                          href={`https://${company?.domain}`}
+                          style={{ color: company?.textColor }}
+                        >
                           {company?.domain}
                         </a>
                       </span>
