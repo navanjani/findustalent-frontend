@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { AppDispatch, RootState } from '../index';
 import { appDoneLoading, appLoading } from '../appState/slice';
 import { setCandidates, setCompany, setDepartments, setIndustries, setJobs, setCandidate } from './slice';
@@ -33,6 +34,7 @@ export const createNewJob = (newJob: IJob) => async (dispatch: AppDispatch, getS
         Authorization: `Bearer ${token}`,
       },
     });
+    toast.success('Job posted successfully!');
     dispatch(setJobs(response.data.jobs));
   } catch (error: any) {
     apiError(dispatch, error, true);
