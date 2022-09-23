@@ -4,12 +4,10 @@ import { setMessage } from '../store/appState/slice';
 
 export const apiError = (dispatch: AppDispatch, error: any, showToast: boolean = false) => {
   let errorMessage = 'Something went wrong!';
-  if (error.response) {
+  if (error.response && error.response.data) {
     /* eslint no-console: 0 */
     console.log(error.response);
-    if (error.response.data) {
-      errorMessage = error.response.data.message;
-    }
+    errorMessage = error.response.data.message;
   } else {
     /* eslint no-console: 0 */
     console.log(error.message);
