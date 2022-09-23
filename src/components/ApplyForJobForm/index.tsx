@@ -1,6 +1,7 @@
 import React, { FC, FormEvent, useEffect, useRef, useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import FormInputWithLabel from '../FormInputWithLabel';
 import FormTextArea from '../FormTextArea';
 import { apiUrl, UPLOADCARE_KEY } from '../../config/constants';
@@ -33,9 +34,17 @@ const ApplyForJobForm: FC<IApplyforJobForm> = ({ companySlug, jobSlug }: IApplyf
         `${apiUrl}/companies/${companySlug}/jobs/${jobSlug}/apply`,
         application,
       );
-      console.log(response);
+      if (response) {
+        toast.success('Application sent!');
+      }
+      setFormData(initialFormData);
     } catch (e: any) {
-      console.log(e.message);
+      if (e.response.data) {
+        toast.error(e.response.data.message);
+      } else {
+        toast.error(e.message);
+      }
+      console.log('Error', e.message);
     }
   };
 
