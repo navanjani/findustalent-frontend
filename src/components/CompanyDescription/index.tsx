@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import DOMPurify from 'isomorphic-dompurify';
 import { ICompany } from '../../types/companies';
 
 interface ICompanyDescription {
@@ -7,13 +8,12 @@ interface ICompanyDescription {
 
 const CompanyDescription: FC<ICompanyDescription> = ({ company }: ICompanyDescription) => (
   <div className="pxp-single-company-content">
-    <h2>About Company</h2>
-    <p>{company?.name}</p>
-    <p>
-      Founded in Amsterdam in 2013, we now work with most prominent investors, entrepreneurs and government
-      organizations to provide transparency, analysis and insights on venture capital activity. Our mission is
-      to accelerate entrepreneurship & innovation through data for governments, corporates and VCs, founders.
-    </p>
+    <h2>About {company?.name}</h2>
+    {/* https://stackoverflow.com/questions/38663751/how-to-safely-render-html-in-react */}
+    {/* https://stackoverflow.com/a/60797348 */}
+    {company?.description && (
+      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(company.description) }} />
+    )}
   </div>
 );
 export default CompanyDescription;

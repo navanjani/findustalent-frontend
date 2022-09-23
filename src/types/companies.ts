@@ -10,6 +10,7 @@ export interface ICompany {
   domain: string;
   industry: number;
   location: string;
+  description: string;
 }
 
 export interface ICreateCompany {
