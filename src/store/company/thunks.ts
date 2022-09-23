@@ -35,7 +35,7 @@ export const createNewJob = (newJob: IJob) => async (dispatch: AppDispatch, getS
     });
     dispatch(setJobs(response.data.jobs));
   } catch (error: any) {
-    apiError(dispatch, error);
+    apiError(dispatch, error, true);
     dispatch(appDoneLoading());
   }
 };
@@ -71,6 +71,7 @@ export const fetchCompanyCandidates = () => async (dispatch: AppDispatch, getSta
     dispatch(appDoneLoading());
   }
 };
+
 export const fetchIndustries = () => async (dispatch: AppDispatch) => {
   dispatch(appLoading());
   try {
@@ -95,7 +96,7 @@ export const createCompany =
       dispatch(setCompany(response.data.company));
       dispatch(appDoneLoading());
     } catch (error: any) {
-      apiError(dispatch, error);
+      apiError(dispatch, error, true);
       dispatch(appDoneLoading());
     }
   };

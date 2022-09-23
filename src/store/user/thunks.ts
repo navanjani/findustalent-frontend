@@ -18,7 +18,7 @@ export const signUp = (user: IProfile) => async (dispatch: AppDispatch) => {
     dispatch(showMessageWithTimeout('success', true, 'account created'));
     dispatch(appDoneLoading());
   } catch (error: any) {
-    apiError(dispatch, error);
+    apiError(dispatch, error, true);
     dispatch(appDoneLoading());
   }
 };
@@ -35,7 +35,7 @@ export const login = (email: string, password: string) => async (dispatch: AppDi
     dispatch(showMessageWithTimeout('success', false, 'welcome back!', 1500));
     dispatch(appDoneLoading());
   } catch (error: any) {
-    apiError(dispatch, error);
+    apiError(dispatch, error, true);
     dispatch(appDoneLoading());
   }
 };
