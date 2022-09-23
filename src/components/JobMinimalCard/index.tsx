@@ -36,9 +36,7 @@ const JobMinimalCard: FC<IJobMinimalCard> = ({ job, employmentType, company }: I
           <div className="pxp-jobs-card-2-category-label">Category: {job.category?.name}</div>
         </span>
         <div className="pxp-jobs-card-2-bottom-right">
-          <span className="pxp-jobs-card-2-date pxp-text-light">
-            {moment(job?.closingDate).fromNow()} by{' '}
-          </span>
+          <span className="pxp-jobs-card-2-date pxp-text-light">{moment(job?.createdAt).fromNow()} by </span>
 
           <NavLink to={`/c/${company.slug}`} className="pxp-jobs-card-2-company">
             {company.name}
