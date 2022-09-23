@@ -10,6 +10,8 @@ import { selectPublicCompany, selectPublicCurrentJob } from '../../store/public/
 import companyLogo from '../../theme/images/company-logo-2.png';
 import jobBanner from '../../theme/images/ph-big.jpg';
 import JobHighlightCard from '../../components/JobHighlightCard';
+import { selectToken, selectUser } from '../../store/user/selectors';
+import { getUserWithStoredToken } from '../../store/user/thunks';
 
 const JobDetailPage: FC = () => {
   interface QueryParamTypes extends Params {
@@ -21,11 +23,19 @@ const JobDetailPage: FC = () => {
   const job = useSelector(selectPublicCurrentJob);
   const company = useSelector(selectPublicCompany);
   const [showApplyForm, setShowApplyForm] = useState(false);
+  const user = useSelector(selectUser);
+  const token = useSelector(selectToken);
 
   useEffect(() => {
     dispatch(fetchCompanyPublicData(companySlug));
     dispatch(fetchJobBySlugs(companySlug, jobSlug));
   }, [companySlug, jobSlug]);
+
+  useEffect(() => {
+    dispatch(getUserWithStoredToken());
+  }, [token]);
+
+  console.log(user);
 
   return (
     <PublicPage hasMargin>
@@ -52,14 +62,16 @@ const JobDetailPage: FC = () => {
                   </div>
                   <div className="col-auto">
                     <div className="pxp-single-job-options mt-4 col-xl-0">
-                      <button
-                        type="button"
-                        disabled={showApplyForm}
-                        className="btn ms-2 pxp-single-job-apply-btn rounded-pill"
-                        onClick={() => setShowApplyForm(true)}
-                      >
-                        Apply Now
-                      </button>
+                      {user?.userType !== 2 && (
+                        <button
+                          type="button"
+                          disabled={showApplyForm}
+                          className="btn ms-2 pxp-single-job-apply-btn rounded-pill"
+                          onClick={() => setShowApplyForm(true)}
+                        >
+                          Apply Now
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -71,16 +83,18 @@ const JobDetailPage: FC = () => {
                     <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(job.description) }} />
                   )}
                   <div className="mt-4 mt-lg-5">
-                    <button
-                      type="button"
-                      disabled={showApplyForm}
-                      className="btn rounded-pill pxp-section-cta"
-                      onClick={() => {
-                        setShowApplyForm(true);
-                      }}
-                    >
-                      Apply Now
-                    </button>
+                    {user?.userType !== 2 && (
+                      <button
+                        type="button"
+                        disabled={showApplyForm}
+                        className="btn rounded-pill pxp-section-cta"
+                        onClick={() => {
+                          setShowApplyForm(true);
+                        }}
+                      >
+                        Apply Now
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div>{showApplyForm && <ApplyForJobForm companySlug={companySlug} jobSlug={jobSlug} />}</div>

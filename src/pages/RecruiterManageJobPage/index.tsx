@@ -45,7 +45,7 @@ const RecruiterManageJobPage: FC = () => {
           </div>
           <div className="col-auto order-1 order-sm-2">
             <div className="pxp-company-dashboard-jobs-search mb-3">
-              <div className="pxp-company-dashboard-jobs-search-results me-3">{jobs.length}</div>
+              <div className="pxp-company-dashboard-jobs-search-results me-3">Total Jobs: {jobs.length}</div>
               <div className="pxp-company-dashboard-jobs-search-search-form">
                 <div className="input-group">
                   <span className="input-group-text">
