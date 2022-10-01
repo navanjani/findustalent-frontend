@@ -62,17 +62,7 @@ function App() {
   return (
     <div className="App" style={{ backgroundColor: bodyColor }}>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Find the perfect talent | findustalent.com</title>
-        <link rel="canonical" href="https://beta.findustalent.com" />
-        <meta property="og:title" content="Find the perfect talent | findustalent.com" />
-        <meta property="og:image" content="//beta.findustalent.com/findustalent-preview.png" />
-        <meta
-          property="og:description"
-          content="FindUsTalent lets you find the perfect
-talent for your job openings by enabling you to create a customized career page"
-        />
-        <meta property="og:url" content="//beta.findustalent.com" />
       </Helmet>
       <ScrollToTop>
         {showClientNavBar && <ClientNavbar />}
