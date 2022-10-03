@@ -34,7 +34,7 @@ Facilitates companies to create a customized career page and handle the recruitm
 </p>
 
 UML Diagram 
-<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-backend/blob/master/docs/FindUsTalent-UML-v5.jpeg" height="400" /></a>    </p>
+<p><a href=https://lucid.app/lucidchart/46cc17f5-09e3-4cde-892f-6aabc818c6fb/edit?invitationId=inv_9140a3ce-1758-4105-b5dd-6b3f3145e3d4&page=0_0#" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-backend/blob/master/docs/FindUsTalent-UML-v5.jpeg" height="400" /></a>    </p>
 
 Project Screenshots
 
@@ -42,12 +42,12 @@ Project Screenshots
 
 <p><a href="https://beta.findustalent.com/signup" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/signup.png" height="400" /></a>    </p>
 
-<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/registerCompany.png" height="400" /></a>    </p>
+<p><a href="https://beta.findustalent.com/recruiter/register-company" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/registerCompany.png" height="400" /></a>    </p>
 
-<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardHome.png" height="400" /></a>  
+<p><a href="https://beta.findustalent.com/dashboard" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardHome.png" height="400" /></a>  
 
-<p> <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardNewJOb.png" height="400" /></a>   
-<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardviewCandidate.png" height="400" /></a> 
-<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/candiateDetails.png" height="400" /></a>    </p>
+<p> <a href="https://beta.findustalent.com/dashboard/add-job" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardNewJOb.png" height="400" /></a>   
+<a href="https://beta.findustalent.com/dashboard/recruiter/candidates" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardviewCandidate.png" height="400" /></a> 
+<a href="https://beta.findustalent.com/dashboard/recruiter/jobs/4/candidates/2" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/candiateDetails.png" height="400" /></a>    </p>
 
 <p><a href="https://beta.findustalent.com/dashboard" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/CandidateDashboard.png" height="400" /></a>    </p>
