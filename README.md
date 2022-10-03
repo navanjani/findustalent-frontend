@@ -38,16 +38,16 @@ UML Diagram
 
 Project Screenshots
 
-<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/homePage.png" height="400" /></a>    </p>
+<p><a href="https://beta.findustalent.com/" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/homePage.png" height="400" /></a>    </p>
 
-<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/signup.png" height="400" /></a>    </p>
+<p><a href="https://beta.findustalent.com/signup" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/signup.png" height="400" /></a>    </p>
 
 <p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/registerCompany.png" height="400" /></a>    </p>
 
 <p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardHome.png" height="400" /></a>  
 
-<p> <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardNewJOb.png" height="200" /></a>   
-<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardviewCandidate.png" height="200" /></a> 
-<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/candiateDetails.png" height="200" /></a>    </p>
+<p> <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardNewJOb.png" height="400" /></a>   
+<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardviewCandidate.png" height="400" /></a> 
+<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/candiateDetails.png" height="400" /></a>    </p>
 
-<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/CandidateDashboard.png" height="400" /></a>    </p>
+<p><a href="https://beta.findustalent.com/dashboard" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/CandidateDashboard.png" height="400" /></a>    </p>
