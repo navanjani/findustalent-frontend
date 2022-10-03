@@ -33,6 +33,21 @@ Facilitates companies to create a customized career page and handle the recruitm
 <img align="center" src="https://camo.githubusercontent.com/1d7814efc567041c56f7cb83654566f6be83d8b2ff4392b6c1321bfeed7d7dc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53657175656c697a652d3532423045373f6c6f676f3d73657175656c697a65266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765" height="20" />
 </p>
 
-UML Diagram  <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-backend/blob/master/docs/FindUsTalent-UML-v5.jpeg" height="50" /></a>    
+UML Diagram 
+<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-backend/blob/master/docs/FindUsTalent-UML-v5.jpeg" height="400" /></a>    </p>
 
+Project Screenshots
 
+<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/homePage.png" height="400" /></a>    </p>
+
+<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/signup.png" height="400" /></a>    </p>
+
+<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/registerCompany.png" height="400" /></a>    </p>
+
+<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardHome.png" height="400" /></a>  
+
+<p> <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardNewJOb.png" height="200" /></a>   
+<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/dashboardviewCandidate.png" height="200" /></a> 
+<a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/candiateDetails.png" height="200" /></a>    </p>
+
+<p><a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/navanjani/findustalent-frontend/blob/master/src/images-md/CandidateDashboard.png" height="400" /></a>    </p>
